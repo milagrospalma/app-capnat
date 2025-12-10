@@ -1,0 +1,271 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>CapNat</title>
+  <!-- Bootstrap CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
+  <!-- Estilos propios -->
+  <link rel="stylesheet" href="./assets/css/styles.css">
+</head>
+<body>
+  <div class="app-shell">
+    <!-- Splash screen -->
+    <section id="view-splash" class="view mobile-frame active">
+      <div class="screen text-center splash-card">
+        <div class="brand mx-auto">
+          <img class="brand-logo" src="./assets/img/logo.png" alt="CapNat logo">
+          <div>
+            <p class="title mb-0">CapNat</p>
+            <small class="text-muted">¡Un mundo por capturar!</small>
+          </div>
+        </div>
+        <div class="fade-delayed" id="splash-actions">
+          <button class="primary-btn w-100 mb-2" data-target="view-login">Iniciar sesión</button>
+          <button class="secondary-btn w-100" data-target="view-signup">Crear cuenta</button>
+        </div>
+      </div>
+    </section>
+
+    <!-- Login screen -->
+    <section id="view-login" class="view mobile-frame">
+      <div class="screen">
+        <div class="d-flex align-items-center mb-3">
+          <button class="icon-btn me-2" data-target="view-splash" aria-label="Volver">
+            <span class="icon-arrow"></span>
+          </button>
+          <div class="text-center flex-grow-1 d-flex justify-content-center align-items-center gap-2 fw-bold">
+            <img class="brand-logo login-menu" src="./assets/img/logo.png" alt="CapNat logo">
+            <span>CapNat</span>
+          </div>
+          <div style="width:32px;"></div>
+        </div>
+        <div class="login-content mt-6">
+            <h1 class="login-title">Iniciar Sesión</h1>
+            <p class="subtitle mb-3">Ingresa tu email y contraseña para continuar.</p>
+
+            <form id="login-form" class="login-form">
+            <div class="mb-3">
+                <label class="form-label">Username / Email</label>
+                <input type="email" class="form-control" id="login-email" placeholder="Username / Email" required>
+            </div>
+            <div class="mb-2">
+                <label class="form-label">Contraseña</label>
+                <input type="password" class="form-control" id="login-password" placeholder="Contraseña" required minlength="4">
+            </div>
+            <button type="submit" class="primary-btn w-100 mt-3 mb-3">Iniciar Sesión</button>
+            <div class="d-flex justify-content-between align-items-center mb-3 links">
+                <div></div>
+                <a href="#" id="forgot">¿Olvidó su contraseña? →</a>
+            </div>
+            </form>
+
+            <div class="text-center text-muted small mb-3">O inicie sesión con:</div>
+            <div class="row g-2 login-social-buttons">
+                <div class="col-6">
+                    <button class="social-btn btn-google w-100" type="button">Google</button>
+                </div>
+                <div class="col-6">
+                    <button class="social-btn btn-facebook w-100" type="button">Facebook</button>
+                </div>
+            </div>
+
+            <div class="text-center links">
+                <a href="#" data-target="view-signup">Crear Cuenta →</a>
+            </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Signup screen -->
+    <section id="view-signup" class="view mobile-frame">
+      <div class="screen">
+        <div class="d-flex align-items-center mb-3">
+            <button class="icon-btn me-2" data-target="view-splash" aria-label="Volver">
+              <span class="icon-arrow"></span>
+            </button>
+            <div class="text-center flex-grow-1 d-flex justify-content-center align-items-center gap-2 fw-bold">
+              <img class="brand-logo login-menu" src="./assets/img/logo.png" alt="CapNat logo">
+              <span>CapNat</span>
+            </div>
+            <div style="width:32px;"></div>
+        </div>
+        <div class="login-content mt-6">
+            <h1 class="login-title">Crear Cuenta</h1>
+            <p class="subtitle mb-3">Regístrate para comenzar.</p>
+            <form id="signup-form" class="mb-3">
+            <div class="mb-3">
+                <label class="form-label">Nombre</label>
+                <input type="text" class="form-control" id="su-name" placeholder="Nombre" required>
+            </div>
+            <div class="mb-3">
+                <label class="form-label">Username / Email</label>
+                <input type="text" class="form-control" id="su-username" placeholder="Username / Email" required>
+            </div>
+            <div class="mb-3">
+                <label class="form-label">Email</label>
+                <input type="email" class="form-control" id="su-email" placeholder="Email" required>
+            </div>
+            <div class="mb-3">
+                <label class="form-label">Contraseña</label>
+                <input type="password" class="form-control" id="su-password" placeholder="Contraseña" required minlength="6">
+            </div>
+            <div class="form-check mb-3">
+                <input class="form-check-input" type="checkbox" id="su-location" checked>
+                <label class="form-check-label" for="su-location">Permitir a CapNat usar su ubicación.</label>
+            </div>
+            <button type="submit" class="primary-btn w-100 mb-3">Crear Cuenta</button>
+            </form>
+            <div class="text-center links">
+                <a href="#" data-target="view-login">Iniciar Sesión →</a>
+            </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Home screen -->
+    <section id="view-home" class="view mobile-frame">
+      <div class="screen-full home-card position-relative">
+        <header class="d-flex justify-content-between align-items-center p-3 border-bottom">
+          <div class="dropdown">
+            <button class="icon-btn dropdown-toggle" type="button" id="dropdownMenuButton" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Menú">
+              <span class="icon-menu"></span>
+            </button>
+            <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton" style="min-width: 190px; padding: 10px 0;">
+              <li>
+                <a class="dropdown-item option-item" href="#" id="option-feedback">
+                  <span class="option-icon mail"></span>
+                  <span>Feedback</span>
+                </a>
+              </li>
+              <li>
+                <a class="dropdown-item option-item" href="#" id="option-facebook">
+                  <span class="option-icon fb"></span>
+                  <span>Facebook</span>
+                </a>
+              </li>
+              <li><hr class="dropdown-divider"></li>
+              <li>
+                <a class="dropdown-item option-item" href="#" id="option-salir" data-target="view-splash">
+                  <span class="option-icon exit"></span>
+                  <span>Salir</span>
+                </a>
+              </li>
+            </ul>
+          </div>
+          <div class="fw-bold">CapNat</div>
+          <div class="dropstart">
+            <button class="icon-btn dropdown-toggle" type="button" id="dropdownNotificationsButton" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Notificaciones">
+              <span class="icon-bell"></span>
+            </button>
+            <ul class="dropdown-menu notification-dropdown" aria-labelledby="dropdownNotificationsButton" id="notifications-list" style="max-height: 500px; overflow-y: auto;">
+              <!-- Las notificaciones se cargarán dinámicamente desde el JSON -->
+            </ul>
+          </div>
+        </header>
+        <div class="map-box position-relative">
+          <a href="./pages/historial.html" class="badge toggle animals" style="text-decoration: none; cursor: pointer;">
+            <img width="20" height="20" src="https://img.icons8.com/ios/50/cat-footprint.png" alt="cat-footprint"/>
+            <p class="home-category-title">Animales</p>
+        </a>
+          <a href="./pages/historial.html#plants" class="badge toggle plants" style="text-decoration: none; cursor: pointer;">
+            <img width="20" height="20" src="https://img.icons8.com/?size=100&id=2280&format=png&color=ffffff" alt="Plantas"/>
+            <p class="home-category-title">Plantas</p>
+          </a>
+          <div class="pin pin-orange" style="top: 22%; left: 75%;">Tigre</div>
+          <div class="pin pin-orange" style="top: 62%; left: 18%;">Águila</div>
+          <div class="pin pin-orange" style="top: 80%; left: 60%;">Cóndor</div>
+          <div class="pin pin-green" style="top: 32%; left: 38%;">Orquídea</div>
+          <div class="pin pin-green" style="top: 48%; left: 64%;">Rosa</div>
+          <div class="pin pin-black hidden" id="pin-new" style="top: 45%; left: 55%;">Nueva</div>
+          <button class="capture-btn" aria-label="Capturar" data-overlay="dialog-capture-choice">
+            <span class="icon-camera"></span>
+          </button>
+        </div>
+      </div>
+    </section>
+
+    <!-- Camera full view -->
+    <section id="view-camera" class="view mobile-frame camera-view">
+      <img id="camera-bg-image" class="camera-bg-image" src="./assets/img/animal-gallito.jpg" alt="Vista de cámara">
+      <div class="camera-overlay">
+        <div class="d-flex align-items-center mb-3">
+            <button class="camera-back-btn" data-target="view-home" aria-label="Volver">
+              <span class="icon-arrow-white"></span>
+            </button>
+        </div>
+        <button class="icon-btn back-btn" data-target="view-home" aria-label="Volver">
+          <span class="icon-arrow"></span>
+        </button>
+        <div class="camera-dot"></div>
+        <button class="capture-btn" aria-label="Capturar foto" id="camera-shot">
+          <span class="icon-camera"></span>
+        </button>
+      </div>
+    </section>
+
+    <!-- Dialog: qué capturar -->
+    <div class="overlay" id="dialog-capture-choice">
+      <div class="dialog-card">
+        <div class="d-flex justify-content-between align-items-start mb-2">
+          <div>
+            <p class="dialog-title mb-0">¿Qué quiere capturar?</p>
+          </div>
+          <button class="icon-btn" data-close-overlay aria-label="Cerrar">×</button>
+        </div>
+        <div class="row g-2">
+          <div class="col-6">
+            <button class="secondary-btn w-100" data-target="view-camera" data-camera-type="animal" data-close-overlay>Animales</button>
+          </div>
+          <div class="col-6">
+            <button class="secondary-btn w-100" data-target="view-camera" data-camera-type="plant" data-close-overlay>Plantas</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Dialog: reconocimiento -->
+    <div class="overlay" id="dialog-recognition">
+      <div class="dialog-card small">
+        <div class="d-flex justify-content-between align-items-start mb-2">
+          <p class="dialog-title mb-0">¡Reconocido!</p>
+          <button class="icon-btn" data-close-overlay aria-label="Cerrar">×</button>
+        </div>
+        <p class="dialog-subtitle">¿Qué desea hacer con su captura?</p>
+        <div class="row g-2">
+          <div class="col-6">
+            <button class="secondary-btn w-100" id="btn-save-from-rec">Guardar</button>
+          </div>
+          <div class="col-6">
+            <button class="primary-btn w-100" id="btn-capture-again">Capturar otra</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Dialog: guardar en mapa -->
+    <div class="overlay" id="dialog-save">
+      <div class="dialog-card small">
+        <div class="d-flex justify-content-between align-items-start mb-2">
+          <p class="dialog-title mb-0">¿Guardar aquí?</p>
+          <button class="icon-btn" data-close-overlay aria-label="Cerrar">×</button>
+        </div>
+        <p class="dialog-subtitle">Guarde su captura en su ubicación actual o elija un lugar en el mapa.</p>
+        <div class="row g-2">
+          <div class="col-6">
+            <button class="secondary-btn w-100" id="btn-save-confirm">Guardar</button>
+          </div>
+          <div class="col-6">
+            <button class="primary-btn w-100" data-close-overlay>Cancelar</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Bootstrap JS (opcional si se necesitan componentes) -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js" integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI" crossorigin="anonymous"></script>
+  <script src="./assets/js/app.js"></script>
+</body>
+</html>

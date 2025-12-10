@@ -1,0 +1,44 @@
+[
+  {
+    "id": 1,
+    "titulo": "Nueva especie descubierta",
+    "descripcion": "Se ha registrado una nueva especie de orquídea en el Parque Nacional Yanachaga Chemillén. Los investigadores están estudiando sus características únicas.",
+    "fecha": "2024-04-20",
+    "leida": false
+  },
+  {
+    "id": 2,
+    "titulo": "Actualización del mapa",
+    "descripcion": "El mapa del parque ha sido actualizado con nuevas rutas y puntos de interés. Explora las nuevas áreas disponibles para capturar especies.",
+    "fecha": "2024-04-18",
+    "leida": false
+  },
+  {
+    "id": 3,
+    "titulo": "Evento de observación",
+    "descripcion": "Únete al evento de observación de aves este fin de semana. Tendrás la oportunidad de capturar especies raras como el Gallito de las Rocas.",
+    "fecha": "2024-04-15",
+    "leida": true
+  },
+  {
+    "id": 4,
+    "titulo": "Logro desbloqueado",
+    "descripcion": "¡Felicidades! Has desbloqueado el logro 'Explorador de Bosques' por capturar más de 10 especies diferentes en el parque.",
+    "fecha": "2024-04-12",
+    "leida": true
+  },
+  {
+    "id": 5,
+    "titulo": "Mantenimiento programado",
+    "descripcion": "El sistema estará en mantenimiento el próximo martes de 2:00 AM a 4:00 AM. Durante este tiempo, algunas funciones pueden no estar disponibles.",
+    "fecha": "2024-04-10",
+    "leida": false
+  },
+  {
+    "id": 6,
+    "titulo": "Nueva función disponible",
+    "descripcion": "Ahora puedes compartir tus capturas en redes sociales directamente desde la aplicación. Comparte tus descubrimientos con la comunidad.",
+    "fecha": "2024-04-08",
+    "leida": true
+  }
+]
