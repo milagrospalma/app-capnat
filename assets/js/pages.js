@@ -1,5 +1,6 @@
 // Datos de especies (JSON estático incluido directamente)
-const especiesData = [
+// Hacer disponible globalmente para app.js
+window.especiesData = [
   {
     "id": 1,
     "categoria": "animal",
@@ -9,7 +10,11 @@ const especiesData = [
     "especie": "Mamífero",
     "ubicacion": "Parque Nacional Yanachaga Chemillén, Oxapampa, Pasco",
     "fecha": "2024-03-15",
-    "descripcion": "El oso de anteojos es el único oso nativo de Sudamérica y es una especie en peligro de extinción. Habita en los bosques montanos del parque, entre los 1,800 y 3,800 metros de altitud. Se caracteriza por las manchas blancas alrededor de los ojos que le dan su nombre distintivo."
+    "descripcion": "El oso de anteojos es el único oso nativo de Sudamérica y es una especie en peligro de extinción. Habita en los bosques montanos del parque, entre los 1,800 y 3,800 metros de altitud. Se caracteriza por las manchas blancas alrededor de los ojos que le dan su nombre distintivo.",
+    "descripcionSimple": "Oso grande con manchas blancas en la cara. Vive en los bosques de montaña. Está en peligro de extinción.",
+    "peligrosidad": "media",
+    "recomendacionSeguridad": "Mantener distancia. No acercarse ni alimentar. Si se encuentra uno, retroceder lentamente sin hacer movimientos bruscos.",
+    "nivelCerteza": 92
   },
   {
     "id": 2,
@@ -20,7 +25,11 @@ const especiesData = [
     "especie": "Ave",
     "ubicacion": "Parque Nacional Yanachaga Chemillén, Oxapampa, Pasco",
     "fecha": "2024-03-20",
-    "descripcion": "También conocido como tunqui, es el ave nacional del Perú. El macho presenta un plumaje de color rojo intenso y una cresta prominente. Habita en los bosques nublados del parque, especialmente en zonas rocosas y acantilados donde construye sus nidos."
+    "descripcion": "También conocido como tunqui, es el ave nacional del Perú. El macho presenta un plumaje de color rojo intenso y una cresta prominente. Habita en los bosques nublados del parque, especialmente en zonas rocosas y acantilados donde construye sus nidos.",
+    "descripcionSimple": "Ave roja con cresta grande. Es el ave nacional del Perú. Vive en zonas rocosas.",
+    "peligrosidad": "baja",
+    "recomendacionSeguridad": "Especie inofensiva. Observar desde distancia respetuosa. No molestar durante época de anidación.",
+    "nivelCerteza": 88
   },
   {
     "id": 3,
@@ -31,7 +40,11 @@ const especiesData = [
     "especie": "Mamífero",
     "ubicacion": "Parque Nacional Yanachaga Chemillén, Oxapampa, Pasco",
     "fecha": "2024-04-02",
-    "descripcion": "El jaguar es el felino más grande de América y un depredador tope en el ecosistema del parque. Habita en las zonas de selva baja y media, siendo un indicador de la salud del ecosistema. Su presencia es crucial para mantener el equilibrio ecológico."
+    "descripcion": "El jaguar es el felino más grande de América y un depredador tope en el ecosistema del parque. Habita en las zonas de selva baja y media, siendo un indicador de la salud del ecosistema. Su presencia es crucial para mantener el equilibrio ecológico.",
+    "descripcionSimple": "Felino grande y peligroso. Es el depredador más grande de América. Muy raro de ver.",
+    "peligrosidad": "alta",
+    "recomendacionSeguridad": "⚠️ PELIGRO: Mantener distancia extrema. No acercarse bajo ninguna circunstancia. Si se encuentra uno, no correr, retroceder lentamente manteniendo contacto visual. Buscar refugio elevado si es posible.",
+    "nivelCerteza": 95
   },
   {
     "id": 4,
@@ -42,7 +55,11 @@ const especiesData = [
     "especie": "Mamífero",
     "ubicacion": "Parque Nacional Yanachaga Chemillén, Oxapampa, Pasco",
     "fecha": "2024-04-10",
-    "descripcion": "El mono choro es un primate de gran tamaño que habita en los bosques del parque. Vive en grupos familiares y se alimenta principalmente de frutos. Es una especie vulnerable debido a la pérdida de hábitat y la caza furtiva."
+    "descripcion": "El mono choro es un primate de gran tamaño que habita en los bosques del parque. Vive en grupos familiares y se alimenta principalmente de frutos. Es una especie vulnerable debido a la pérdida de hábitat y la caza furtiva.",
+    "descripcionSimple": "Mono grande que vive en grupos. Come frutas. Está en peligro.",
+    "peligrosidad": "baja",
+    "recomendacionSeguridad": "Especie generalmente inofensiva. Observar desde distancia. No alimentar ni acosar.",
+    "nivelCerteza": 87
   },
   {
     "id": 5,
@@ -53,7 +70,11 @@ const especiesData = [
     "especie": "Mamífero",
     "ubicacion": "Parque Nacional Yanachaga Chemillén, Oxapampa, Pasco",
     "fecha": "2024-04-18",
-    "descripcion": "El venado enano o pudú es el ciervo más pequeño de América. Habita en los bosques montanos del parque, entre los 2,000 y 3,500 metros de altitud. Es una especie tímida y difícil de observar, prefiriendo áreas con densa vegetación."
+    "descripcion": "El venado enano o pudú es el ciervo más pequeño de América. Habita en los bosques montanos del parque, entre los 2,000 y 3,500 metros de altitud. Es una especie tímida y difícil de observar, prefiriendo áreas con densa vegetación.",
+    "descripcionSimple": "Venado muy pequeño. Es tímido y difícil de ver. Vive en los bosques de montaña.",
+    "peligrosidad": "baja",
+    "recomendacionSeguridad": "Especie inofensiva. Observar en silencio desde distancia. No perseguir ni molestar.",
+    "nivelCerteza": 85
   },
   {
     "id": 6,
@@ -64,7 +85,11 @@ const especiesData = [
     "especie": "Orquidácea",
     "ubicacion": "Parque Nacional Yanachaga Chemillén, Oxapampa, Pasco",
     "fecha": "2024-03-12",
-    "descripcion": "El parque alberga más de 800 especies de orquídeas, siendo uno de los ecosistemas con mayor diversidad de estas plantas en el mundo. Las orquídeas crecen principalmente como epífitas en los árboles del bosque nublado, entre los 1,500 y 3,000 metros de altitud."
+    "descripcion": "El parque alberga más de 800 especies de orquídeas, siendo uno de los ecosistemas con mayor diversidad de estas plantas en el mundo. Las orquídeas crecen principalmente como epífitas en los árboles del bosque nublado, entre los 1,500 y 3,000 metros de altitud.",
+    "descripcionSimple": "Flor bonita que crece en los árboles. Hay muchas especies diferentes en el parque.",
+    "peligrosidad": "ninguna",
+    "recomendacionSeguridad": "Planta inofensiva. No arrancar ni dañar. Algunas especies están protegidas.",
+    "nivelCerteza": 78
   },
   {
     "id": 7,
@@ -75,7 +100,11 @@ const especiesData = [
     "especie": "Conífera",
     "ubicacion": "Parque Nacional Yanachaga Chemillén, Oxapampa, Pasco",
     "fecha": "2024-03-25",
-    "descripcion": "El ulcumano es un árbol nativo de los bosques montanos peruanos que puede alcanzar hasta 30 metros de altura. Es una especie endémica de la región y forma parte importante del dosel del bosque nublado del parque, proporcionando hábitat para diversas especies."
+    "descripcion": "El ulcumano es un árbol nativo de los bosques montanos peruanos que puede alcanzar hasta 30 metros de altura. Es una especie endémica de la región y forma parte importante del dosel del bosque nublado del parque, proporcionando hábitat para diversas especies.",
+    "descripcionSimple": "Árbol grande nativo del Perú. Puede medir hasta 30 metros. Solo crece en esta región.",
+    "peligrosidad": "ninguna",
+    "recomendacionSeguridad": "Árbol inofensivo. No talar ni dañar. Especie endémica protegida.",
+    "nivelCerteza": 91
   },
   {
     "id": 8,
@@ -86,7 +115,11 @@ const especiesData = [
     "especie": "Árbol",
     "ubicacion": "Parque Nacional Yanachaga Chemillén, Oxapampa, Pasco",
     "fecha": "2024-04-05",
-    "descripcion": "El cedro es un árbol de gran valor comercial y ecológico que crece en las zonas de selva alta del parque. Su madera es muy apreciada, pero también es importante para la conservación del suelo y como hábitat para la fauna. Puede alcanzar hasta 40 metros de altura."
+    "descripcion": "El cedro es un árbol de gran valor comercial y ecológico que crece en las zonas de selva alta del parque. Su madera es muy apreciada, pero también es importante para la conservación del suelo y como hábitat para la fauna. Puede alcanzar hasta 40 metros de altura.",
+    "descripcionSimple": "Árbol muy alto con madera valiosa. Ayuda a conservar el suelo y da hogar a animales.",
+    "peligrosidad": "ninguna",
+    "recomendacionSeguridad": "Árbol inofensivo. Su madera es valiosa pero está protegido en el parque.",
+    "nivelCerteza": 89
   },
   {
     "id": 9,
@@ -97,7 +130,11 @@ const especiesData = [
     "especie": "Árbol",
     "ubicacion": "Parque Nacional Yanachaga Chemillén, Oxapampa, Pasco",
     "fecha": "2024-04-12",
-    "descripcion": "El nogal andino es un árbol nativo que crece en los bosques montanos del parque, entre los 1,500 y 3,000 metros de altitud. Produce nueces comestibles y su madera es de alta calidad. Es una especie importante para la conservación de la biodiversidad del ecosistema."
+    "descripcion": "El nogal andino es un árbol nativo que crece en los bosques montanos del parque, entre los 1,500 y 3,000 metros de altitud. Produce nueces comestibles y su madera es de alta calidad. Es una especie importante para la conservación de la biodiversidad del ecosistema.",
+    "descripcionSimple": "Árbol que da nueces comestibles. Su madera es de buena calidad. Importante para el ecosistema.",
+    "peligrosidad": "ninguna",
+    "recomendacionSeguridad": "Árbol inofensivo. Sus nueces son comestibles. No dañar el árbol al recolectar.",
+    "nivelCerteza": 86
   },
   {
     "id": 10,
@@ -108,7 +145,11 @@ const especiesData = [
     "especie": "Árbol",
     "ubicacion": "Parque Nacional Yanachaga Chemillén, Oxapampa, Pasco",
     "fecha": "2024-04-22",
-    "descripcion": "El roble andino es un árbol característico de los bosques montanos del parque. Forma parte del dosel forestal y proporciona alimento y refugio para numerosas especies de fauna. Sus hojas y corteza son importantes para el ciclo de nutrientes del ecosistema."
+    "descripcion": "El roble andino es un árbol característico de los bosques montanos del parque. Forma parte del dosel forestal y proporciona alimento y refugio para numerosas especies de fauna. Sus hojas y corteza son importantes para el ciclo de nutrientes del ecosistema.",
+    "descripcionSimple": "Árbol común en los bosques de montaña. Da comida y refugio a muchos animales.",
+    "peligrosidad": "ninguna",
+    "recomendacionSeguridad": "Árbol inofensivo. Importante para el ecosistema. No dañar.",
+    "nivelCerteza": 90
   }
 ];
 
@@ -243,7 +284,6 @@ function loadEspecieDetail() {
     const especieEl = document.getElementById('detail-especie');
     const ubicacionEl = document.getElementById('detail-ubicacion');
     const fechaEl = document.getElementById('detail-fecha');
-    const descripcionEl = document.getElementById('detail-descripcion');
     
     if (nombreEl) nombreEl.textContent = especie.nombre;
     if (imagenEl) {
@@ -265,7 +305,90 @@ function loadEspecieDetail() {
       fechaEl.textContent = fechaFormateada;
     }
     
-    if (descripcionEl) descripcionEl.textContent = especie.descripcion;
+    // Configurar descripciones (simple y avanzada)
+    const descripcionSimpleEl = document.getElementById('detail-descripcion-simple');
+    const descripcionEl = document.getElementById('detail-descripcion');
+    const toggleNivel = document.getElementById('toggle-nivel-info');
+    
+    // Cargar preferencia del usuario (por defecto: simple)
+    const modoAvanzado = localStorage.getItem('modoAvanzado') === 'true';
+    
+    if (descripcionSimpleEl && especie.descripcionSimple) {
+      descripcionSimpleEl.textContent = especie.descripcionSimple;
+    } else if (descripcionSimpleEl && especie.descripcion) {
+      // Si no hay descripción simple, usar la completa
+      descripcionSimpleEl.textContent = especie.descripcion;
+    }
+    
+    if (descripcionEl && especie.descripcion) {
+      descripcionEl.textContent = especie.descripcion;
+    }
+    
+    // Configurar toggle
+    if (toggleNivel) {
+      toggleNivel.checked = modoAvanzado;
+      
+      // Función para cambiar entre modos
+      const cambiarModo = () => {
+        const esAvanzado = toggleNivel.checked;
+        localStorage.setItem('modoAvanzado', esAvanzado.toString());
+        
+        if (esAvanzado) {
+          // Modo avanzado: mostrar descripción completa
+          if (descripcionSimpleEl) descripcionSimpleEl.style.display = 'none';
+          if (descripcionEl) descripcionEl.style.display = 'block';
+        } else {
+          // Modo simple: mostrar descripción simple
+          if (descripcionSimpleEl) descripcionSimpleEl.style.display = 'block';
+          if (descripcionEl) descripcionEl.style.display = 'none';
+        }
+      };
+      
+      // Aplicar modo inicial
+      cambiarModo();
+      
+      // Listener para cambios
+      toggleNivel.addEventListener('change', cambiarModo);
+    } else {
+      // Si no hay toggle, mostrar descripción simple por defecto
+      if (descripcionSimpleEl) descripcionSimpleEl.style.display = 'block';
+      if (descripcionEl) descripcionEl.style.display = 'none';
+    }
+    
+    // Mostrar nivel de certeza
+    const certezaEl = document.getElementById('detail-certeza');
+    if (certezaEl && especie.nivelCerteza) {
+      certezaEl.textContent = `${especie.nivelCerteza}%`;
+    }
+    
+    // Mostrar información de seguridad
+    const seguridadAlert = document.getElementById('detail-seguridad-alert');
+    const recomendacionSeguridad = document.getElementById('detail-recomendacion-seguridad');
+    
+    if (especie.peligrosidad) {
+      let alertClass = 'alert-info';
+      let icon = 'ℹ️';
+      
+      if (especie.peligrosidad === 'alta') {
+        alertClass = 'alert-danger';
+        icon = '⚠️';
+      } else if (especie.peligrosidad === 'media') {
+        alertClass = 'alert-warning';
+        icon = '⚠️';
+      }
+      
+      if (seguridadAlert) {
+        seguridadAlert.className = `alert ${alertClass} mb-3`;
+        seguridadAlert.innerHTML = `<strong>${icon} Nivel de peligrosidad: ${especie.peligrosidad.toUpperCase()}</strong>`;
+        seguridadAlert.style.display = 'block';
+      }
+      
+      if (recomendacionSeguridad && especie.recomendacionSeguridad) {
+        recomendacionSeguridad.className = `alert ${alertClass === 'alert-danger' ? 'alert-danger' : alertClass === 'alert-warning' ? 'alert-warning' : 'alert-info'}`;
+        recomendacionSeguridad.innerHTML = `<strong>Recomendaciones de seguridad:</strong><br>${especie.recomendacionSeguridad}`;
+        recomendacionSeguridad.style.display = 'block';
+      }
+    }
     
     // Actualizar título de la página
     document.title = `CapNat - ${especie.nombre}`;

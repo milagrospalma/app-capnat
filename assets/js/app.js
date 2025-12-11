@@ -148,7 +148,82 @@ if (splashActions) {
   setTimeout(() => splashActions.classList.add("visible"), 2000);
 }
 
-// Camera flow - El botón ahora usa Bootstrap modal directamente, no necesita event listener
+// Camera flow - Simular reconocimiento con datos aleatorios
+const cameraShot = document.getElementById("camera-shot");
+if (cameraShot) {
+  cameraShot.addEventListener("click", (e) => {
+    e.preventDefault();
+    // Simular reconocimiento: seleccionar una especie aleatoria del JSON
+    // En producción, esto vendría de la API de IA
+    // Acceder a especiesData desde window (definido en pages.js)
+    const especiesData = window.especiesData || [];
+    if (especiesData.length === 0) {
+      console.warn('No hay datos de especies disponibles');
+      return;
+    }
+    const animales = especiesData.filter(e => e.categoria === "animal");
+    const plantas = especiesData.filter(e => e.categoria === "planta");
+    const todasEspecies = [...animales, ...plantas];
+    const especieAleatoria = todasEspecies[Math.floor(Math.random() * todasEspecies.length)];
+    
+    // Guardar especie reconocida en localStorage para el modal
+    localStorage.setItem('especieReconocida', JSON.stringify(especieAleatoria));
+    
+    // Mostrar modal de reconocimiento
+    const recognitionModalElement = document.getElementById("recognitionModal");
+    const recognitionModal = new bootstrap.Modal(recognitionModalElement);
+    const certaintyPercentage = document.getElementById("certainty-percentage");
+    const speciesName = document.getElementById("recognition-species-name");
+    
+    if (certaintyPercentage && especieAleatoria.nivelCerteza) {
+      certaintyPercentage.textContent = `${especieAleatoria.nivelCerteza}%`;
+      // Cambiar color del badge según el nivel de certeza
+      const certaintyBadge = document.querySelector('.certainty-badge');
+      if (certaintyBadge) {
+        certaintyBadge.classList.remove('medium', 'low');
+        if (especieAleatoria.nivelCerteza < 70) {
+          certaintyBadge.classList.add('low');
+        } else if (especieAleatoria.nivelCerteza < 85) {
+          certaintyBadge.classList.add('medium');
+        }
+      }
+    }
+    if (speciesName) {
+      speciesName.textContent = especieAleatoria.nombre;
+    }
+    
+    recognitionModal.show();
+  });
+}
+
+// Limpiar backdrop del modal de reconocimiento cuando se cierre de cualquier forma
+// Ejecutar inmediatamente si el DOM ya está cargado, o esperar a DOMContentLoaded
+function setupRecognitionModalCleanup() {
+  const recognitionModalElement = document.getElementById("recognitionModal");
+  if (recognitionModalElement) {
+    // Remover listener anterior si existe para evitar duplicados
+    recognitionModalElement.removeEventListener('hidden.bs.modal', cleanupModalBackdrop);
+    recognitionModalElement.addEventListener('hidden.bs.modal', cleanupModalBackdrop);
+  }
+}
+
+function cleanupModalBackdrop() {
+  // Limpiar cualquier backdrop residual con un pequeño delay para asegurar que Bootstrap termine su limpieza
+  setTimeout(() => {
+    const backdrops = document.querySelectorAll('.modal-backdrop');
+    backdrops.forEach(backdrop => backdrop.remove());
+    document.body.classList.remove('modal-open');
+    document.body.style.overflow = '';
+    document.body.style.paddingRight = '';
+  }, 50);
+}
+
+// Ejecutar cuando el DOM esté listo
+if (document.readyState === 'loading') {
+  document.addEventListener('DOMContentLoaded', setupRecognitionModalCleanup);
+} else {
+  setupRecognitionModalCleanup();
+}
 
 const btnCaptureAgain = document.getElementById("btn-capture-again");
 if (btnCaptureAgain) {
@@ -163,16 +238,53 @@ const btnSaveFromRec = document.getElementById("btn-save-from-rec");
 if (btnSaveFromRec) {
   btnSaveFromRec.addEventListener("click", (e) => {
     e.preventDefault();
-    // El modal de reconocimiento se cierra automáticamente con data-bs-dismiss
-    // Ir a Home screen
-    showView("view-home");
+    // Obtener la especie reconocida del localStorage
+    const especieReconocidaData = localStorage.getItem('especieReconocida');
+    if (especieReconocidaData) {
+      const especieReconocida = JSON.parse(especieReconocidaData);
+      // Guardar como especie seleccionada para que aparezca en el historial
+      localStorage.setItem('especieSeleccionada', especieReconocidaData);
+    }
     
-    // Mostrar el Toast después de un pequeño delay para que la vista cambie primero
-    setTimeout(() => {
-      const saveMapToastElement = document.getElementById("saveMapToast");
-      const saveMapToast = new bootstrap.Toast(saveMapToastElement);
-      saveMapToast.show();
-    }, 100);
+    // Obtener la instancia del modal y cerrarlo manualmente
+    const recognitionModalElement = document.getElementById("recognitionModal");
+    const recognitionModal = bootstrap.Modal.getInstance(recognitionModalElement);
+    
+    if (recognitionModal) {
+      // Cerrar el modal
+      recognitionModal.hide();
+      
+      // Esperar a que el modal se cierre completamente (incluyendo el backdrop)
+      recognitionModalElement.addEventListener('hidden.bs.modal', function onModalHidden() {
+        // Remover el listener para evitar múltiples ejecuciones
+        recognitionModalElement.removeEventListener('hidden.bs.modal', onModalHidden);
+        
+        // Ir a Home screen
+        showView("view-home");
+        
+        // Mostrar el Toast después de un pequeño delay para asegurar que el backdrop se haya eliminado
+        setTimeout(() => {
+          // Asegurarse de que no haya backdrops residuales
+          const backdrops = document.querySelectorAll('.modal-backdrop');
+          backdrops.forEach(backdrop => backdrop.remove());
+          document.body.classList.remove('modal-open');
+          document.body.style.overflow = '';
+          document.body.style.paddingRight = '';
+          
+          const saveMapToastElement = document.getElementById("saveMapToast");
+          const saveMapToast = new bootstrap.Toast(saveMapToastElement);
+          saveMapToast.show();
+        }, 150);
+      }, { once: true });
+    } else {
+      // Si no hay instancia del modal, proceder directamente
+      showView("view-home");
+      setTimeout(() => {
+        const saveMapToastElement = document.getElementById("saveMapToast");
+        const saveMapToast = new bootstrap.Toast(saveMapToastElement);
+        saveMapToast.show();
+      }, 150);
+    }
   });
 }
 

@@ -532,6 +532,62 @@ section {
   margin-bottom: 12px;
 }
 
+/* Badge de certeza en modal de reconocimiento */
+.certainty-badge {
+  display: inline-block;
+  padding: 8px 16px;
+  background: var(--brand-green);
+  color: white;
+  border-radius: 20px;
+  font-weight: 700;
+  font-size: 14px;
+}
+
+.certainty-badge.medium {
+  background: #ffa500;
+}
+
+.certainty-badge.low {
+  background: #ff5b3b;
+}
+
+/* Alertas de seguridad en detalle */
+#detail-seguridad-alert {
+  font-size: 14px;
+  padding: 12px;
+  border-radius: 8px;
+}
+
+#detail-recomendacion-seguridad {
+  font-size: 13px;
+  padding: 12px;
+  border-radius: 8px;
+  line-height: 1.5;
+}
+
+/* Toggle de modo simple/avanzado */
+#toggle-nivel-info {
+  cursor: pointer;
+}
+
+#toggle-nivel-info + label {
+  cursor: pointer;
+  user-select: none;
+  color: var(--text-muted);
+  font-size: 13px;
+  margin-left: 8px;
+}
+
+#toggle-nivel-info:checked + label {
+  color: var(--brand-black);
+  font-weight: 600;
+}
+
+.detail-desc {
+  line-height: 1.6;
+  color: var(--text-main);
+}
+
 /* Overlays & dialogs */
 .overlay {
   position: fixed;

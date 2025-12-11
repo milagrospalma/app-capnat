@@ -278,10 +278,16 @@
             <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Cerrar"></button>
           </div>
           <div class="modal-body">
+            <div class="text-center mb-3">
+              <div class="certainty-badge mb-2" id="recognition-certainty">
+                <span id="certainty-percentage">0%</span> de certeza
+              </div>
+              <p class="dialog-subtitle mb-0" id="recognition-species-name">Especie identificada</p>
+            </div>
             <p class="dialog-subtitle mb-3">¿Qué desea hacer con su captura?</p>
             <div class="row g-2">
               <div class="col-6">
-                <button class="secondary-btn w-100" id="btn-save-from-rec" data-bs-dismiss="modal">Guardar</button>
+                <button class="secondary-btn w-100" id="btn-save-from-rec">Guardar</button>
               </div>
               <div class="col-6">
                 <button class="primary-btn w-100" id="btn-capture-again" data-bs-dismiss="modal">Capturar otra</button>
@@ -374,6 +380,7 @@
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"
     integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI"
     crossorigin="anonymous"></script>
+  <script src="./assets/js/pages.js"></script>
   <script src="./assets/js/app.js"></script>
 </body>
 

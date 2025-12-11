@@ -50,7 +50,7 @@ cd app-capnat
 ## Despliegue
 
 Este proyecto está desplegado en GitHub Pages. Accede a la versión en vivo en:
-https://tu-usuario.github.io/app-capnat
+https://milagrospalma.github.io/app-capnat/index.html
 
 ## Licencia
 
