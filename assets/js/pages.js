@@ -4,7 +4,7 @@ window.especiesData = [
   {
     "id": 1,
     "categoria": "animal",
-    "imagen": "https://www.peru.travel/Contenido/Uploads/oso-andino-interior-1_637708492669784910.jpg",
+    "imagen": "https://www.boletomachupicchu.com/gutblt/wp-content/uploads/2017/08/oso-andino-anteojos.jpg",
     "nombre": "Oso de Anteojos",
     "nombreCientifico": "Tremarctos ornatus",
     "especie": "Mamífero",
@@ -14,22 +14,12 @@ window.especiesData = [
     "descripcionSimple": "Oso grande con manchas blancas en la cara. Vive en los bosques de montaña. Está en peligro de extinción.",
     "peligrosidad": "media",
     "recomendacionSeguridad": "Mantener distancia. No acercarse ni alimentar. Si se encuentra uno, retroceder lentamente sin hacer movimientos bruscos.",
-    "nivelCerteza": 92
-  },
-  {
-    "id": 2,
-    "categoria": "animal",
-    "imagen": "https://perujungletrips.com/wp-content/uploads/2025/06/Gallito-de-las-rocas-Rupicola-peruvianus-Ave-Naciona-del-Peru-2.webp",
-    "nombre": "Gallito de las Rocas",
-    "nombreCientifico": "Rupicola peruviana",
-    "especie": "Ave",
-    "ubicacion": "Parque Nacional Yanachaga Chemillén, Oxapampa, Pasco",
-    "fecha": "2024-03-20",
-    "descripcion": "También conocido como tunqui, es el ave nacional del Perú. El macho presenta un plumaje de color rojo intenso y una cresta prominente. Habita en los bosques nublados del parque, especialmente en zonas rocosas y acantilados donde construye sus nidos.",
-    "descripcionSimple": "Ave roja con cresta grande. Es el ave nacional del Perú. Vive en zonas rocosas.",
-    "peligrosidad": "baja",
-    "recomendacionSeguridad": "Especie inofensiva. Observar desde distancia respetuosa. No molestar durante época de anidación.",
-    "nivelCerteza": 88
+    "nivelCerteza": 92,
+    "genero": "Tremarctos",
+    "familia": "Ursidae",
+    "habitat": ["bosque-montano", "bosque-nublado"],
+    "altitud": { "min": 1800, "max": 3800 },
+    "caracteristicas": ["manchas-blancas", "grande", "pelaje-negro", "cara-redonda"],
   },
   {
     "id": 3,
@@ -44,7 +34,12 @@ window.especiesData = [
     "descripcionSimple": "Felino grande y peligroso. Es el depredador más grande de América. Muy raro de ver.",
     "peligrosidad": "alta",
     "recomendacionSeguridad": "⚠️ PELIGRO: Mantener distancia extrema. No acercarse bajo ninguna circunstancia. Si se encuentra uno, no correr, retroceder lentamente manteniendo contacto visual. Buscar refugio elevado si es posible.",
-    "nivelCerteza": 95
+    "nivelCerteza": 95,
+    "genero": "Panthera",
+    "familia": "Felidae",
+    "habitat": ["selva-baja", "selva-media"],
+    "altitud": { "min": 0, "max": 2000 },
+    "caracteristicas": ["manchas", "grande", "felino", "pelaje-amarillo"],
   },
   {
     "id": 4,
@@ -59,7 +54,12 @@ window.especiesData = [
     "descripcionSimple": "Mono grande que vive en grupos. Come frutas. Está en peligro.",
     "peligrosidad": "baja",
     "recomendacionSeguridad": "Especie generalmente inofensiva. Observar desde distancia. No alimentar ni acosar.",
-    "nivelCerteza": 87
+    "nivelCerteza": 87,
+    "genero": "Lagothrix",
+    "familia": "Atelidae",
+    "habitat": ["bosque-tropical", "selva-alta"],
+    "altitud": { "min": 500, "max": 3000 },
+    "caracteristicas": ["pelaje-gris", "cola-larga", "primate"],
   },
   {
     "id": 5,
@@ -74,22 +74,12 @@ window.especiesData = [
     "descripcionSimple": "Venado muy pequeño. Es tímido y difícil de ver. Vive en los bosques de montaña.",
     "peligrosidad": "baja",
     "recomendacionSeguridad": "Especie inofensiva. Observar en silencio desde distancia. No perseguir ni molestar.",
-    "nivelCerteza": 85
-  },
-  {
-    "id": 6,
-    "categoria": "planta",
-    "imagen": "https://elcomercio.pe/resizer/gWbMbKNFogEVtEekort--dlmieY=/1200x900/smart/filters:format(jpeg):quality(75)/arc-anglerfish-arc2-prod-elcomercio.s3.amazonaws.com/public/L5VJFAGZOZFVXJGR3DQG2E2JSY.jpg",
-    "nombre": "Orquídea",
-    "nombreCientifico": "Epidendrum secundum",
-    "especie": "Orquidácea",
-    "ubicacion": "Parque Nacional Yanachaga Chemillén, Oxapampa, Pasco",
-    "fecha": "2024-03-12",
-    "descripcion": "El parque alberga más de 800 especies de orquídeas, siendo uno de los ecosistemas con mayor diversidad de estas plantas en el mundo. Las orquídeas crecen principalmente como epífitas en los árboles del bosque nublado, entre los 1,500 y 3,000 metros de altitud.",
-    "descripcionSimple": "Flor bonita que crece en los árboles. Hay muchas especies diferentes en el parque.",
-    "peligrosidad": "ninguna",
-    "recomendacionSeguridad": "Planta inofensiva. No arrancar ni dañar. Algunas especies están protegidas.",
-    "nivelCerteza": 78
+    "nivelCerteza": 85,
+    "genero": "Pudu",
+    "familia": "Cervidae",
+    "habitat": ["bosque-montano", "bosque-nublado"],
+    "altitud": { "min": 2000, "max": 3500 },
+    "caracteristicas": ["pequeño", "pelaje-marrón", "cuernos"],
   },
   {
     "id": 7,
@@ -104,7 +94,12 @@ window.especiesData = [
     "descripcionSimple": "Árbol grande nativo del Perú. Puede medir hasta 30 metros. Solo crece en esta región.",
     "peligrosidad": "ninguna",
     "recomendacionSeguridad": "Árbol inofensivo. No talar ni dañar. Especie endémica protegida.",
-    "nivelCerteza": 91
+    "nivelCerteza": 91,
+    "genero": "Retrophyllum",
+    "familia": "Podocarpaceae",
+    "habitat": ["bosque-montano", "bosque-nublado"],
+    "altitud": { "min": 2000, "max": 3500 },
+    "caracteristicas": ["conifera", "hojas-aciculares", "tronco-recto"],
   },
   {
     "id": 8,
@@ -119,7 +114,12 @@ window.especiesData = [
     "descripcionSimple": "Árbol muy alto con madera valiosa. Ayuda a conservar el suelo y da hogar a animales.",
     "peligrosidad": "ninguna",
     "recomendacionSeguridad": "Árbol inofensivo. Su madera es valiosa pero está protegido en el parque.",
-    "nivelCerteza": 89
+    "nivelCerteza": 89,
+    "genero": "Cedrela",
+    "familia": "Meliaceae",
+    "habitat": ["selva-alta", "bosque-tropical"],
+    "altitud": { "min": 500, "max": 2000 },
+    "caracteristicas": ["hojas-compuestas", "tronco-grueso", "corteza-fisurada"],
   },
   {
     "id": 9,
@@ -134,7 +134,12 @@ window.especiesData = [
     "descripcionSimple": "Árbol que da nueces comestibles. Su madera es de buena calidad. Importante para el ecosistema.",
     "peligrosidad": "ninguna",
     "recomendacionSeguridad": "Árbol inofensivo. Sus nueces son comestibles. No dañar el árbol al recolectar.",
-    "nivelCerteza": 86
+    "nivelCerteza": 86,
+    "genero": "Juglans",
+    "familia": "Juglandaceae",
+    "habitat": ["bosque-montano", "bosque-nublado"],
+    "altitud": { "min": 1500, "max": 3000 },
+    "caracteristicas": ["hojas-compuestas", "fruto-nuez", "corteza-gris"],
   },
   {
     "id": 10,
@@ -149,11 +154,16 @@ window.especiesData = [
     "descripcionSimple": "Árbol común en los bosques de montaña. Da comida y refugio a muchos animales.",
     "peligrosidad": "ninguna",
     "recomendacionSeguridad": "Árbol inofensivo. Importante para el ecosistema. No dañar.",
-    "nivelCerteza": 90
+    "nivelCerteza": 90,
+    "genero": "Quercus",
+    "familia": "Fagaceae",
+    "habitat": ["bosque-montano", "bosque-nublado"],
+    "altitud": { "min": 2000, "max": 3500 },
+    "caracteristicas": ["hojas-lobuladas", "fruto-bellota", "corteza-rugosa"],
   }
 ];
 
-// Función para cargar las especies (ahora solo renderiza, no hace fetch)
+// Función para cargar las especies
 function loadEspecies() {
   renderEspecies();
 }
@@ -169,36 +179,182 @@ function renderEspecies() {
   listAnimals.innerHTML = '';
   listPlants.innerHTML = '';
   
+  // Obtener capturas del usuario
+  const misCapturas = JSON.parse(localStorage.getItem('misCapturas') || '[]');
+  
+  // Obtener IDs de especies ya capturadas por el usuario
+  const especiesCapturadasIds = new Set(misCapturas.map(c => c.especieId));
+  
+  // Obtener especies ocultas (eliminadas por el usuario)
+  const especiesOcultas = JSON.parse(localStorage.getItem('especiesOcultas') || '[]');
+  
+  // Combinar: especies precargadas + capturas del usuario
+  // Primero agregar todas las especies precargadas, excluyendo las ocultas
+  const todasEspecies = especiesData.filter(e => !especiesOcultas.includes(e.id));
+  
+  // Datos de especies para el ejercicio estático
+  const gallitoDeLasRocas = {
+    "id": 2,
+    "categoria": "animal",
+    "imagen": "https://perujungletrips.com/wp-content/uploads/2025/06/Gallito-de-las-rocas-Rupicola-peruvianus-Ave-Naciona-del-Peru-2.webp",
+    "nombre": "Gallito de las Rocas",
+    "nombreCientifico": "Rupicola peruviana",
+    "especie": "Ave",
+    "ubicacion": "Parque Nacional Yanachaga Chemillén, Oxapampa, Pasco",
+    "fecha": "2024-03-20",
+    "descripcion": "También conocido como tunqui, es el ave nacional del Perú. El macho presenta un plumaje de color rojo intenso y una cresta prominente. Habita en los bosques nublados del parque, especialmente en zonas rocosas y acantilados donde construye sus nidos.",
+    "descripcionSimple": "Ave roja con cresta grande. Es el ave nacional del Perú. Vive en zonas rocosas.",
+    "peligrosidad": "baja",
+    "recomendacionSeguridad": "Especie inofensiva. Observar desde distancia respetuosa. No molestar durante época de anidación.",
+    "nivelCerteza": 88,
+    "genero": "Rupicola",
+    "familia": "Cotingidae",
+    "habitat": ["bosque-nublado", "zonas-rocosas"],
+    "altitud": { "min": 1500, "max": 3000 },
+    "caracteristicas": ["rojo", "cresta", "plumaje-intenso"]
+  };
+  
+  const orquidea = {
+    "id": 6,
+    "categoria": "planta",
+    "imagen": "https://elcomercio.pe/resizer/gWbMbKNFogEVtEekort--dlmieY=/1200x900/smart/filters:format(jpeg):quality(75)/arc-anglerfish-arc2-prod-elcomercio.s3.amazonaws.com/public/L5VJFAGZOZFVXJGR3DQG2E2JSY.jpg",
+    "nombre": "Orquídea",
+    "nombreCientifico": "Epidendrum secundum",
+    "especie": "Orquidácea",
+    "ubicacion": "Parque Nacional Yanachaga Chemillén, Oxapampa, Pasco",
+    "fecha": "2024-03-12",
+    "descripcion": "El parque alberga más de 800 especies de orquídeas, siendo uno de los ecosistemas con mayor diversidad de estas plantas en el mundo. Las orquídeas crecen principalmente como epífitas en los árboles del bosque nublado, entre los 1,500 y 3,000 metros de altitud.",
+    "descripcionSimple": "Flor bonita que crece en los árboles. Hay muchas especies diferentes en el parque.",
+    "peligrosidad": "ninguna",
+    "recomendacionSeguridad": "Planta inofensiva. No arrancar ni dañar. Algunas especies están protegidas.",
+    "nivelCerteza": 78,
+    "genero": "Epidendrum",
+    "familia": "Orchidaceae",
+    "habitat": ["bosque-nublado", "epifita"],
+    "altitud": { "min": 1500, "max": 3000 },
+    "caracteristicas": ["flor-colorida", "epifita", "petalos"]
+  };
+  
+  // Agregar especies de las capturas que no estén en la lista precargada
+  misCapturas.forEach(captura => {
+    const especieEnLista = todasEspecies.find(e => e.id === captura.especieId);
+    if (!especieEnLista) {
+      // Si la especie de la captura no está en la lista precargada
+      // Verificar si es "Gallito de las Rocas" o "Orquídea"
+      if (captura.especieId === 2) {
+        todasEspecies.push(gallitoDeLasRocas);
+      } else if (captura.especieId === 6) {
+        todasEspecies.push(orquidea);
+      } else {
+        // Intentar obtenerla desde window.especiesData
+        const especie = window.especiesData?.find(e => e.id === captura.especieId);
+        if (especie) {
+          todasEspecies.push(especie);
+        }
+      }
+    }
+  });
+  
   // Filtrar y renderizar animales
-  const animales = especiesData.filter(e => e.categoria === "animal");
+  const animales = todasEspecies.filter(e => e.categoria === "animal");
+  // Ordenar: primero las capturadas por el usuario, luego las demás
+  animales.sort((a, b) => {
+    const aCapturada = especiesCapturadasIds.has(a.id);
+    const bCapturada = especiesCapturadasIds.has(b.id);
+    if (aCapturada && !bCapturada) return -1;
+    if (!aCapturada && bCapturada) return 1;
+    return 0;
+  });
+  
   animales.forEach(especie => {
-    const item = createEspecieItem(especie);
+    const item = createEspecieItem(especie, especiesCapturadasIds.has(especie.id));
     listAnimals.appendChild(item);
   });
   
   // Filtrar y renderizar plantas
-  const plantas = especiesData.filter(e => e.categoria === "planta");
+  const plantas = todasEspecies.filter(e => e.categoria === "planta");
+  // Ordenar: primero las capturadas por el usuario, luego las demás
+  plantas.sort((a, b) => {
+    const aCapturada = especiesCapturadasIds.has(a.id);
+    const bCapturada = especiesCapturadasIds.has(b.id);
+    if (aCapturada && !bCapturada) return -1;
+    if (!aCapturada && bCapturada) return 1;
+    return 0;
+  });
+  
   plantas.forEach(especie => {
-    const item = createEspecieItem(especie);
+    const item = createEspecieItem(especie, especiesCapturadasIds.has(especie.id));
     listPlants.appendChild(item);
   });
 }
 
 // Función para crear un item de especie
-function createEspecieItem(especie) {
+function createEspecieItem(especie, esCapturada = false) {
   const item = document.createElement('div');
   item.className = 'capture-item';
   item.style.cursor = 'pointer';
-  item.addEventListener('click', () => {
+  
+  // Obtener la captura si existe
+  let captura = null;
+  if (esCapturada) {
+    const misCapturas = JSON.parse(localStorage.getItem('misCapturas') || '[]');
+    captura = misCapturas.find(c => c.especieId === especie.id);
+  }
+  
+  item.addEventListener('click', (e) => {
+    // No navegar si se hizo clic en el botón de eliminar
+    if (e.target.closest('.btn-delete-capture')) {
+      return;
+    }
     // Guardar el ID en localStorage y navegar a detalle
     localStorage.setItem('especieSeleccionada', JSON.stringify(especie));
     window.location.href = './detalle.html';
   });
   
+  // Crear botón de eliminar para todos los items
+  const deleteButton = `
+    <button class="btn-delete-capture" data-especie-id="${especie.id}" data-captura-id="${captura ? captura.id : ''}" data-es-capturada="${esCapturada}" aria-label="Eliminar">
+      <img src="https://img.icons8.com/?size=100&id=85081&format=png&color=000000" alt="Eliminar" style="width: 20px; height: 20px;">
+    </button>
+  `;
+  
   item.innerHTML = `
     <img class="capture-thumb" src="${especie.imagen}" alt="${especie.nombre}">
-    <p class="capture-name">${especie.nombre}</p>
+    <div class="flex-grow-1">
+      <p class="capture-name mb-0">${especie.nombre}</p>
+    </div>
+    ${deleteButton}
   `;
+  
+  // Agregar evento al botón de eliminar para todos los items
+  const deleteBtn = item.querySelector('.btn-delete-capture');
+  if (deleteBtn) {
+    deleteBtn.addEventListener('click', (e) => {
+      e.stopPropagation(); // Prevenir que active el click del item
+      
+      // Mostrar modal de confirmación
+      const deleteModalElement = document.getElementById('deleteConfirmModal');
+      if (deleteModalElement) {
+        const deleteModal = new bootstrap.Modal(deleteModalElement);
+        const messageEl = document.getElementById('delete-confirm-message');
+        const confirmBtn = document.getElementById('btn-confirm-delete');
+        
+        // Actualizar mensaje del modal
+        if (messageEl) {
+          messageEl.textContent = `¿Estás seguro de que deseas eliminar "${especie.nombre}" de la lista?`;
+        }
+        
+        // Guardar información de la especie a eliminar en el botón de confirmar
+        if (confirmBtn) {
+          confirmBtn.setAttribute('data-especie-id', especie.id);
+          confirmBtn.setAttribute('data-captura-id', deleteBtn.getAttribute('data-captura-id') || '');
+          confirmBtn.setAttribute('data-es-capturada', deleteBtn.getAttribute('data-es-capturada') || 'false');
+        }
+        
+        deleteModal.show();
+      }
+    });
+  }
   
   return item;
 }
@@ -234,8 +390,50 @@ tabButtons.forEach((btn) => {
   });
 });
 
+// Función para ejecutar la eliminación
+function ejecutarEliminacion(especieId, capturaId, esCapturada) {
+  if (esCapturada === 'true') {
+    // Si está capturada, eliminar de misCapturas
+    const misCapturas = JSON.parse(localStorage.getItem('misCapturas') || '[]');
+    const nuevasCapturas = misCapturas.filter(c => c.id !== capturaId);
+    localStorage.setItem('misCapturas', JSON.stringify(nuevasCapturas));
+  } else {
+    // Si no está capturada, agregar a especies ocultas
+    const especiesOcultas = JSON.parse(localStorage.getItem('especiesOcultas') || '[]');
+    if (!especiesOcultas.includes(especieId)) {
+      especiesOcultas.push(especieId);
+      localStorage.setItem('especiesOcultas', JSON.stringify(especiesOcultas));
+    }
+  }
+  
+  // Recargar la lista
+  loadEspecies();
+}
+
 // Detectar hash en la URL para activar el tab correspondiente
 window.addEventListener("DOMContentLoaded", () => {
+  // Configurar botón de confirmar eliminación
+  const btnConfirmDelete = document.getElementById('btn-confirm-delete');
+  if (btnConfirmDelete) {
+    btnConfirmDelete.addEventListener('click', () => {
+      const especieId = parseInt(btnConfirmDelete.getAttribute('data-especie-id'));
+      const capturaId = btnConfirmDelete.getAttribute('data-captura-id');
+      const esCapturada = btnConfirmDelete.getAttribute('data-es-capturada');
+      
+      // Cerrar el modal
+      const deleteModalElement = document.getElementById('deleteConfirmModal');
+      if (deleteModalElement) {
+        const deleteModal = bootstrap.Modal.getInstance(deleteModalElement);
+        if (deleteModal) {
+          deleteModal.hide();
+        }
+      }
+      
+      // Ejecutar eliminación
+      ejecutarEliminacion(especieId, capturaId, esCapturada);
+    });
+  }
+  
   // Cargar especies (solo si estamos en historial.html)
   if (window.location.pathname.includes('historial.html')) {
     loadEspecies();
