@@ -12,27 +12,32 @@
 <body>
   <div class="app-shell">
     <div class="mobile-frame">
-      <div class="detail-card screen">
-        <div class="d-flex align-items-center mb-3">
-          <a href="./historial.html" class="icon-btn me-2" aria-label="Volver" id="back-to-historial"><span
-              class="icon-arrow"></span></a>
+      <div class="screen screen-no-padding w-100">
+        <div class="d-flex align-items-center mb-3 login-header header-shadow">
+          <a href="./historial.html" class="icon-btn me-2" aria-label="Volver"
+            style="padding-left: 0; text-decoration: none;">
+            <img src="https://img.icons8.com/?size=100&id=PXS7hSwrozS5&format=png&color=000000" alt=""
+              style="width: 30px; height: 30px;">
+          </a>
           <div class="text-center flex-grow-1 d-flex justify-content-center align-items-center gap-2 fw-bold">
             <img class="brand-logo login-menu" src="../assets/img/logo.png" alt="CapNat logo">
             <span>CapNat</span>
           </div>
-          <div style="width:32px;"></div>
+          <div style="width:35px;"></div>
         </div>
-        <div class="card-title-bar mb-3" id="detail-nombre">Nombre</div>
-        <img class="detail-hero mb-3" id="detail-imagen"
-          src="https://images.unsplash.com/photo-1546182990-dffeafbe841d?auto=format&fit=crop&w=800&q=80" alt="Especie">
-        <div class="detail-row mb-1"><span class="detail-label">Nombre científico:</span><span
-            id="detail-nombre-cientifico">-</span></div>
-        <div class="detail-row mb-1"><span class="detail-label">Especie:</span><span id="detail-especie">-</span></div>
-        <div class="detail-row mb-1"><span class="detail-label">Capturado en:</span><span id="detail-ubicacion">-</span>
+        <div class="detalle-content-padding">
+          <div class="card-title-bar mb-3" id="detail-nombre">Nombre</div>
+          <img class="detail-hero mb-3" id="detail-imagen"
+            src="https://images.unsplash.com/photo-1546182990-dffeafbe841d?auto=format&fit=crop&w=800&q=80" alt="Especie">
+          <div class="detail-row mb-1"><span class="detail-label">Nombre científico:</span><span
+              id="detail-nombre-cientifico">-</span></div>
+          <div class="detail-row mb-1"><span class="detail-label">Especie:</span><span id="detail-especie">-</span></div>
+          <div class="detail-row mb-1"><span class="detail-label">Capturado en:</span><span id="detail-ubicacion">-</span>
+          </div>
+          <div class="detail-row mb-3"><span class="detail-label">Fecha:</span><span id="detail-fecha">-</span></div>
+          <h4 class="fw-bold mb-2">Descripción</h4>
+          <p class="detail-desc" id="detail-descripcion">Cargando información...</p>
         </div>
-        <div class="detail-row mb-3"><span class="detail-label">Fecha:</span><span id="detail-fecha">-</span></div>
-        <h4 class="fw-bold mb-2">Descripción</h4>
-        <p class="detail-desc" id="detail-descripcion">Cargando información...</p>
       </div>
     </div>
   </div>
