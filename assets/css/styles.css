@@ -63,6 +63,13 @@ section {
 .screen-full {
   width: 100%;
   max-width: 520px;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+.screen-full > header {
+  flex-shrink: 0;
 }
 
 .view {
@@ -226,6 +233,9 @@ section {
 .map-box {
   background: url("../img/mapa.png") center/cover no-repeat;
   position: relative;
+  flex: 1;
+  overflow: hidden;
+  min-height: 0;
 }
 
 .badge.toggle {
@@ -1151,6 +1161,30 @@ section {
   cursor: pointer;
 }
 
+/* Toast backdrop styles */
+.toast-backdrop {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  z-index: 1050;
+  display: none;
+  opacity: 0;
+  transition: opacity 0.15s linear;
+}
+
+.toast-backdrop.show {
+  display: block;
+  opacity: 1;
+}
+
+/* Asegurar que el Toast esté por encima del backdrop */
+.toast-container {
+  z-index: 1055 !important;
+}
+
 @media (max-width: 480px) {
   .card-base {
     padding: 24px;
@@ -1189,7 +1223,7 @@ section {
     height: 95dvh;
   }
 
-  .map-box {
-    height: 87dvh;
+  .modal-dialog {
+    max-width: 330px;
   }
 }

@@ -61,7 +61,7 @@ document.querySelectorAll("[data-target]").forEach((el) => {
           cameraImage.src = "./assets/img/animal-gallito.jpg";
           cameraImage.alt = "Vista de cámara - Animal";
         } else if (cameraType === "plant") {
-          cameraImage.src = "./assets/img/planta-orquidea.jpeg";
+          cameraImage.src = "./assets/img/planta-orquidea.jpg";
           cameraImage.alt = "Vista de cámara - Planta";
         }
       }
@@ -170,17 +170,8 @@ if (loginForm) {
         case "auth/user-not-found":
           errorMessage = "No existe una cuenta con este email.";
           break;
-        case "auth/wrong-password":
-          errorMessage = "La contraseña es incorrecta.";
-          break;
-        case "auth/invalid-email":
-          errorMessage = "El email no es válido.";
-          break;
         case "auth/invalid-credential":
-          errorMessage = "Email o contraseña incorrectos.";
-          break;
-        case "auth/user-disabled":
-          errorMessage = "Esta cuenta ha sido deshabilitada.";
+          errorMessage = "Email o contraseña incorrectos";
           break;
         case "auth/too-many-requests":
           errorMessage = "Demasiados intentos fallidos. Intenta más tarde.";
@@ -558,20 +549,25 @@ if (btnSaveConfirmToast) {
         relativeY = ((pointerCenterY - mapRect.top) / mapRect.height) * 100;
       }
       
-      // Si es Orquídea (id: 6), posicionarla arriba de Gallito de las Rocas (id: 2)
+      // Si es Orquídea (id: 6), posicionarla a 300px debajo del header (posición fija)
       if (especieReconocida.id === 6) {
-        const misCapturas = JSON.parse(localStorage.getItem('misCapturas') || '[]');
-        const capturaGallito = misCapturas.find(c => c.especieId === 2);
-        if (capturaGallito && capturaGallito.ubicacion) {
-          // Obtener la posición del mapa para calcular píxeles
-          const mapRect = mapBox.getBoundingClientRect();
-          const alturaMapa = mapRect.height;
+        // Obtener el header de la vista Home
+        const header = document.querySelector('#view-home header');
+        const mapRect = mapBox.getBoundingClientRect();
+        
+        if (header && mapBox) {
+          // Obtener la posición del header
+          const headerRect = header.getBoundingClientRect();
           
-          // Convertir porcentaje de Gallito a píxeles
-          const topGallitoPx = (capturaGallito.ubicacion.top / 100) * alturaMapa;
-          const topOrquideaPx = topGallitoPx - 150;
+          // Posición
+          const alturaMapa = mapRect.height;
+          const topOrquideaPx = 200;
+          
+          // Convertir a porcentaje relativo al map-box
           relativeY = (topOrquideaPx / alturaMapa) * 100;
-          relativeX = capturaGallito.ubicacion.left;
+          
+          // Centrar horizontalmente (50% del ancho del mapa)
+          relativeX = 50;
         }
       }
       
@@ -612,6 +608,7 @@ if (btnSaveConfirmToast) {
       const saveMapToast = bootstrap.Toast.getInstance(saveMapToastElement);
       if (saveMapToast) {
         saveMapToast.hide();
+        hideToastBackdrop();
       }
       
       // Recargar pins en el mapa
@@ -956,6 +953,24 @@ function renderNotificaciones() {
   });
 }
 
+// Función para mostrar el backdrop del Toast
+function showToastBackdrop() {
+  const backdrop = document.getElementById('toastBackdrop');
+  if (backdrop) {
+    backdrop.classList.add('show');
+    document.body.style.overflow = 'hidden';
+  }
+}
+
+// Función para ocultar el backdrop del Toast
+function hideToastBackdrop() {
+  const backdrop = document.getElementById('toastBackdrop');
+  if (backdrop) {
+    backdrop.classList.remove('show');
+    document.body.style.overflow = '';
+  }
+}
+
 // Función para configurar el toggle de contraseña
 function setupPasswordToggle(toggleBtnId, passwordInputId) {
   const toggleBtn = document.getElementById(toggleBtnId);
@@ -988,6 +1003,17 @@ window.addEventListener("DOMContentLoaded", () => {
   // Configurar toggles de contraseña
   setupPasswordToggle('toggle-login-password', 'login-password');
   setupPasswordToggle('toggle-su-password', 'su-password');
+  
+  // Configurar eventos del Toast para mostrar/ocultar backdrop
+  const saveMapToastElement = document.getElementById("saveMapToast");
+  if (saveMapToastElement) {
+    saveMapToastElement.addEventListener('shown.bs.toast', () => {
+      showToastBackdrop();
+    });
+    saveMapToastElement.addEventListener('hidden.bs.toast', () => {
+      hideToastBackdrop();
+    });
+  }
   
   // Cargar notificaciones
   renderNotificaciones();

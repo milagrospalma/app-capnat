@@ -273,7 +273,7 @@
       <div class="modal-dialog modal-dialog-centered">
         <div class="modal-content">
           <div class="modal-header">
-            <h5 class="modal-title" id="captureChoiceModalLabel">¿Qué quiere capturar?</h5>
+            <h5 class="modal-title" id="captureChoiceModalLabel">¿Qué quieres capturar?</h5>
             <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Cerrar"></button>
           </div>
           <div class="modal-body">
@@ -376,7 +376,8 @@
     </div>
 
     <!-- Toast: guardar en mapa -->
-    <div class="toast-container position-fixed top-50 start-50 translate-middle p-3" style="z-index: 11;">
+    <div class="toast-backdrop" id="toastBackdrop"></div>
+    <div class="toast-container position-fixed top-50 start-50 translate-middle p-3" style="z-index: 1055;">
       <div id="saveMapToast" class="toast" role="alert" aria-live="assertive" aria-atomic="true"
         data-bs-autohide="false">
         <div class="toast-header">
