@@ -1,14 +1,17 @@
 <!DOCTYPE html>
 <html lang="es">
+
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>CapNat</title>
   <!-- Bootstrap CSS -->
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
   <!-- Estilos propios -->
   <link rel="stylesheet" href="./assets/css/styles.css">
 </head>
+
 <body>
   <div class="app-shell">
     <!-- Splash screen -->
@@ -30,10 +33,11 @@
 
     <!-- Login screen -->
     <section id="view-login" class="view mobile-frame">
-      <div class="screen">
-        <div class="d-flex align-items-center mb-3">
-          <button class="icon-btn me-2" data-target="view-splash" aria-label="Volver">
-            <span class="icon-arrow"></span>
+      <div class="screen screen-no-padding">
+        <div class="d-flex align-items-center mb-3 login-header header-shadow">
+          <button class="icon-btn me-2" data-target="view-splash" aria-label="Volver" style="padding-left: 0;">
+            <img src="https://img.icons8.com/?size=100&id=PXS7hSwrozS5&format=png&color=000000" alt=""
+              style="width: 30px; height: 30px;">
           </button>
           <div class="text-center flex-grow-1 d-flex justify-content-center align-items-center gap-2 fw-bold">
             <img class="brand-logo login-menu" src="./assets/img/logo.png" alt="CapNat logo">
@@ -41,85 +45,88 @@
           </div>
           <div style="width:32px;"></div>
         </div>
-        <div class="login-content mt-6">
-            <h1 class="login-title">Iniciar Sesión</h1>
-            <p class="subtitle mb-3">Ingresa tu email y contraseña para continuar.</p>
+        <div class="login-content mt-6 login-content-padding">
+          <h1 class="login-title">Iniciar Sesión</h1>
+          <p class="subtitle mb-3">Ingresa tu email y contraseña para continuar.</p>
 
-            <form id="login-form" class="login-form">
+          <form id="login-form" class="login-form">
             <div class="mb-3">
-                <label class="form-label">Username / Email</label>
-                <input type="email" class="form-control" id="login-email" placeholder="Username / Email" required>
+              <label class="form-label">Email</label>
+              <input type="email" class="form-control" id="login-email" placeholder="Email" required>
             </div>
             <div class="mb-2">
-                <label class="form-label">Contraseña</label>
-                <input type="password" class="form-control" id="login-password" placeholder="Contraseña" required minlength="4">
+              <label class="form-label">Contraseña</label>
+              <input type="password" class="form-control" id="login-password" placeholder="Contraseña" required
+                minlength="4">
             </div>
             <button type="submit" class="primary-btn w-100 mt-3 mb-3">Iniciar Sesión</button>
             <div class="d-flex justify-content-between align-items-center mb-3 links">
-                <div></div>
-                <a href="#" id="forgot">¿Olvidó su contraseña? →</a>
+              <div></div>
+              <a href="#" id="forgot">¿Olvidó su contraseña? →</a>
             </div>
-            </form>
+          </form>
 
-            <div class="text-center text-muted small mb-3">O inicie sesión con:</div>
-            <div class="row g-2 login-social-buttons">
-                <div class="col-6">
-                    <button class="social-btn btn-google w-100" type="button">Google</button>
-                </div>
-                <div class="col-6">
-                    <button class="social-btn btn-facebook w-100" type="button">Facebook</button>
-                </div>
+          <div class="text-center text-muted small mb-3">O inicie sesión con:</div>
+          <div class="row g-2 login-social-buttons">
+            <div class="col-6">
+              <button class="social-btn btn-google w-100" type="button">Google</button>
             </div>
+            <div class="col-6">
+              <button class="social-btn btn-facebook w-100" type="button">Facebook</button>
+            </div>
+          </div>
 
-            <div class="text-center links">
-                <a href="#" data-target="view-signup">Crear Cuenta →</a>
-            </div>
+          <div class="text-center links">
+            <a href="#" data-target="view-signup">Crear Cuenta →</a>
+          </div>
         </div>
       </div>
     </section>
 
     <!-- Signup screen -->
     <section id="view-signup" class="view mobile-frame">
-      <div class="screen">
-        <div class="d-flex align-items-center mb-3">
-            <button class="icon-btn me-2" data-target="view-splash" aria-label="Volver">
-              <span class="icon-arrow"></span>
-            </button>
-            <div class="text-center flex-grow-1 d-flex justify-content-center align-items-center gap-2 fw-bold">
-              <img class="brand-logo login-menu" src="./assets/img/logo.png" alt="CapNat logo">
-              <span>CapNat</span>
-            </div>
-            <div style="width:32px;"></div>
+      <div class="screen screen-no-padding">
+        <div class="d-flex align-items-center mb-3 login-header header-shadow">
+          <button class="icon-btn me-2" data-target="view-splash" aria-label="Volver" style="padding-left: 0;">
+            <img src="https://img.icons8.com/?size=100&id=PXS7hSwrozS5&format=png&color=000000" alt=""
+              style="width: 30px; height: 30px;">
+          </button>
+          <div class="text-center flex-grow-1 d-flex justify-content-center align-items-center gap-2 fw-bold">
+            <img class="brand-logo login-menu" src="./assets/img/logo.png" alt="CapNat logo">
+            <span>CapNat</span>
+          </div>
+          <div style="width:32px;"></div>
         </div>
-        <div class="login-content mt-6">
-            <h1 class="login-title">Crear Cuenta</h1>
-            <p class="subtitle mb-3">Regístrate para comenzar.</p>
-            <form id="signup-form" class="mb-3">
+        <div class="login-content mt-6 login-content-padding">
+          <h1 class="login-title">Crear Cuenta</h1>
+          <p class="subtitle mb-3">Regístrate para comenzar.</p>
+          <form id="signup-form" class="mb-3">
             <div class="mb-3">
-                <label class="form-label">Nombre</label>
-                <input type="text" class="form-control" id="su-name" placeholder="Nombre" required>
+              <label class="form-label">Nombre</label>
+              <input type="text" class="form-control" id="su-name" placeholder="Nombre" required>
             </div>
             <div class="mb-3">
-                <label class="form-label">Username / Email</label>
-                <input type="text" class="form-control" id="su-username" placeholder="Username / Email" required>
+              <label class="form-label">Username</label>
+              <input type="text" class="form-control" id="su-username" placeholder="Username">
             </div>
             <div class="mb-3">
-                <label class="form-label">Email</label>
-                <input type="email" class="form-control" id="su-email" placeholder="Email" required>
+              <label class="form-label">Email</label>
+              <input type="email" class="form-control" id="su-email" placeholder="Email" required>
             </div>
             <div class="mb-3">
-                <label class="form-label">Contraseña</label>
-                <input type="password" class="form-control" id="su-password" placeholder="Contraseña" required minlength="6">
+              <label class="form-label">Contraseña</label>
+              <input type="password" class="form-control" id="su-password" placeholder="Contraseña" required
+                minlength="6">
             </div>
             <div class="form-check mb-3">
-                <input class="form-check-input" type="checkbox" id="su-location" checked>
-                <label class="form-check-label" for="su-location">Permitir a CapNat usar su ubicación.</label>
+              <input class="form-check-input" type="checkbox" id="su-location" checked>
+              <label class="form-check-label" for="su-location">Permitir a CapNat usar su ubicación.</label>
             </div>
             <button type="submit" class="primary-btn w-100 mb-3">Crear Cuenta</button>
-            </form>
-            <div class="text-center links">
-                <a href="#" data-target="view-login">Iniciar Sesión →</a>
-            </div>
+          </form>
+          <div class="text-center links">
+            <a href="#" data-target="view-login">Iniciar Sesión →</a>
+          </div>
         </div>
       </div>
     </section>
@@ -127,15 +134,19 @@
     <!-- Home screen -->
     <section id="view-home" class="view mobile-frame">
       <div class="screen-full home-card position-relative">
-        <header class="d-flex justify-content-between align-items-center p-3 border-bottom">
+        <header class="d-flex justify-content-between align-items-center p-3 header-shadow">
           <div class="dropdown">
-            <button class="icon-btn dropdown-toggle" type="button" id="dropdownMenuButton" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Menú">
+            <button class="icon-btn dropdown-toggle" type="button" id="dropdownMenuButton" data-bs-toggle="dropdown"
+              aria-expanded="false" aria-label="Menú">
               <span class="icon-menu"></span>
             </button>
             <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton" style="min-width: 190px; padding: 10px 0;">
               <li>
                 <a class="dropdown-item option-item" href="#" id="option-feedback">
-                  <span class="option-icon mail"></span>
+                  <svg xmlns="http://www.w3.org/2000/svg" height="14" width="14" viewBox="0 0 512 512">
+                    <path fill="#454545"
+                      d="M61.4 64C27.5 64 0 91.5 0 125.4 0 126.3 0 127.1 .1 128L0 128 0 384c0 35.3 28.7 64 64 64l384 0c35.3 0 64-28.7 64-64l0-256-.1 0c0-.9 .1-1.7 .1-2.6 0-33.9-27.5-61.4-61.4-61.4L61.4 64zM464 192.3L464 384c0 8.8-7.2 16-16 16L64 400c-8.8 0-16-7.2-16-16l0-191.7 154.8 117.4c31.4 23.9 74.9 23.9 106.4 0L464 192.3zM48 125.4C48 118 54 112 61.4 112l389.2 0c7.4 0 13.4 6 13.4 13.4 0 4.2-2 8.2-5.3 10.7L280.2 271.5c-14.3 10.8-34.1 10.8-48.4 0L53.3 136.1c-3.3-2.5-5.3-6.5-5.3-10.7z" />
+                  </svg>
                   <span>Feedback</span>
                 </a>
               </li>
@@ -145,32 +156,49 @@
                   <span>Facebook</span>
                 </a>
               </li>
-              <li><hr class="dropdown-divider"></li>
+              <li>
+                <hr class="dropdown-divider">
+              </li>
               <li>
                 <a class="dropdown-item option-item" href="#" id="option-salir" data-target="view-splash">
-                  <span class="option-icon exit"></span>
+                  <svg xmlns="http://www.w3.org/2000/svg" height="14" width="14" viewBox="0 0 512 512">
+                    <path fill="#454545"
+                      d="M160 96c17.7 0 32-14.3 32-32s-14.3-32-32-32L96 32C43 32 0 75 0 128L0 384c0 53 43 96 96 96l64 0c17.7 0 32-14.3 32-32s-14.3-32-32-32l-64 0c-17.7 0-32-14.3-32-32l0-256c0-17.7 14.3-32 32-32l64 0zM502.6 278.6c12.5-12.5 12.5-32.8 0-45.3l-128-128c-12.5-12.5-32.8-12.5-45.3 0s-12.5 32.8 0 45.3L402.7 224 192 224c-17.7 0-32 14.3-32 32s14.3 32 32 32l210.7 0-73.4 73.4c-12.5 12.5-12.5 32.8 0 45.3s32.8 12.5 45.3 0l128-128z" />
+                  </svg>
                   <span>Salir</span>
                 </a>
               </li>
             </ul>
           </div>
-          <div class="fw-bold">CapNat</div>
+          <div class="hidden">
+            <img class="brand-logo login-menu" src="./assets/img/logo.png" alt="CapNat logo">
+            <span class="fw-bold">CapNat</span>
+          </div>
+          <div class="text-center flex-grow-1 d-flex justify-content-center align-items-center gap-2 fw-bold">
+            <img class="brand-logo login-menu" src="./assets/img/logo.png" alt="CapNat logo">
+            <span>CapNat</span>
+          </div>
           <div class="dropstart">
-            <button class="icon-btn dropdown-toggle" type="button" id="dropdownNotificationsButton" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Notificaciones">
+            <button class="icon-btn dropdown-toggle" type="button" id="dropdownNotificationsButton"
+              data-bs-toggle="dropdown" aria-expanded="false" aria-label="Notificaciones">
               <span class="icon-bell"></span>
             </button>
-            <ul class="dropdown-menu notification-dropdown" aria-labelledby="dropdownNotificationsButton" id="notifications-list" style="max-height: 500px; overflow-y: auto;">
+            <ul class="dropdown-menu notification-dropdown" aria-labelledby="dropdownNotificationsButton"
+              id="notifications-list" style="max-height: 500px; overflow-y: auto;">
               <!-- Las notificaciones se cargarán dinámicamente desde el JSON -->
             </ul>
           </div>
         </header>
         <div class="map-box position-relative">
-          <a href="./pages/historial.html" class="badge toggle animals" style="text-decoration: none; cursor: pointer;">
-            <img width="20" height="20" src="https://img.icons8.com/ios/50/cat-footprint.png" alt="cat-footprint"/>
+          <a href="./pages/historial.html#animals" class="badge toggle animals"
+            style="text-decoration: none; cursor: pointer;">
+            <img width="20" height="20" src="https://img.icons8.com/ios/50/cat-footprint.png" alt="cat-footprint" />
             <p class="home-category-title">Animales</p>
-        </a>
-          <a href="./pages/historial.html#plants" class="badge toggle plants" style="text-decoration: none; cursor: pointer;">
-            <img width="20" height="20" src="https://img.icons8.com/?size=100&id=2280&format=png&color=ffffff" alt="Plantas"/>
+          </a>
+          <a href="./pages/historial.html#plants" class="badge toggle plants"
+            style="text-decoration: none; cursor: pointer;">
+            <img width="20" height="20" src="https://img.icons8.com/?size=100&id=2280&format=png&color=ffffff"
+              alt="Plantas" />
             <p class="home-category-title">Plantas</p>
           </a>
           <div class="pin pin-orange" style="top: 22%; left: 75%;">Tigre</div>
@@ -179,8 +207,11 @@
           <div class="pin pin-green" style="top: 32%; left: 38%;">Orquídea</div>
           <div class="pin pin-green" style="top: 48%; left: 64%;">Rosa</div>
           <div class="pin pin-black hidden" id="pin-new" style="top: 45%; left: 55%;">Nueva</div>
-          <button class="capture-btn" aria-label="Capturar" data-overlay="dialog-capture-choice">
-            <span class="icon-camera"></span>
+          <button class="capture-btn" aria-label="Capturar" data-bs-toggle="modal" data-bs-target="#captureChoiceModal">
+            <svg xmlns="http://www.w3.org/2000/svg" height="30" width="30" viewBox="0 0 512 512">
+              <path fill="#ffffff"
+                d="M193.1 32c-18.7 0-36.2 9.4-46.6 24.9L120.5 96 64 96C28.7 96 0 124.7 0 160L0 416c0 35.3 28.7 64 64 64l384 0c35.3 0 64-28.7 64-64l0-256c0-35.3-28.7-64-64-64l-56.5 0-26-39.1C355.1 41.4 337.6 32 318.9 32L193.1 32zm-6.7 51.6c1.5-2.2 4-3.6 6.7-3.6l125.7 0c2.7 0 5.2 1.3 6.7 3.6l33.2 49.8c4.5 6.7 11.9 10.7 20 10.7l69.3 0c8.8 0 16 7.2 16 16l0 256c0 8.8-7.2 16-16 16L64 432c-8.8 0-16-7.2-16-16l0-256c0-8.8 7.2-16 16-16l69.3 0c8 0 15.5-4 20-10.7l33.2-49.8zM256 384a112 112 0 1 0 0-224 112 112 0 1 0 0 224zM192 272a64 64 0 1 1 128 0 64 64 0 1 1 -128 0z" />
+            </svg>
           </button>
         </div>
       </div>
@@ -191,73 +222,148 @@
       <img id="camera-bg-image" class="camera-bg-image" src="./assets/img/animal-gallito.jpg" alt="Vista de cámara">
       <div class="camera-overlay">
         <div class="d-flex align-items-center mb-3">
-            <button class="camera-back-btn" data-target="view-home" aria-label="Volver">
-              <span class="icon-arrow-white"></span>
-            </button>
+          <button class="camera-back-btn" data-target="view-home" aria-label="Volver">
+            <svg xmlns="http://www.w3.org/2000/svg" height="22" width="18" viewBox="0 0 256 512">
+              <path fill="#fafafa"
+                d="M9.4 233.4c-12.5 12.5-12.5 32.8 0 45.3l160 160c12.5 12.5 32.8 12.5 45.3 0s12.5-32.8 0-45.3L77.3 256 214.6 118.6c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0l-160 160z" />
+            </svg>
+          </button>
         </div>
         <button class="icon-btn back-btn" data-target="view-home" aria-label="Volver">
           <span class="icon-arrow"></span>
         </button>
         <div class="camera-dot"></div>
-        <button class="capture-btn" aria-label="Capturar foto" id="camera-shot">
-          <span class="icon-camera"></span>
+        <button class="capture-btn" aria-label="Capturar foto" id="camera-shot" data-bs-toggle="modal"
+          data-bs-target="#recognitionModal">
+          <svg xmlns="http://www.w3.org/2000/svg" height="30" width="30" viewBox="0 0 512 512">
+            <path fill="#ffffff"
+              d="M193.1 32c-18.7 0-36.2 9.4-46.6 24.9L120.5 96 64 96C28.7 96 0 124.7 0 160L0 416c0 35.3 28.7 64 64 64l384 0c35.3 0 64-28.7 64-64l0-256c0-35.3-28.7-64-64-64l-56.5 0-26-39.1C355.1 41.4 337.6 32 318.9 32L193.1 32zm-6.7 51.6c1.5-2.2 4-3.6 6.7-3.6l125.7 0c2.7 0 5.2 1.3 6.7 3.6l33.2 49.8c4.5 6.7 11.9 10.7 20 10.7l69.3 0c8.8 0 16 7.2 16 16l0 256c0 8.8-7.2 16-16 16L64 432c-8.8 0-16-7.2-16-16l0-256c0-8.8 7.2-16 16-16l69.3 0c8 0 15.5-4 20-10.7l33.2-49.8zM256 384a112 112 0 1 0 0-224 112 112 0 1 0 0 224zM192 272a64 64 0 1 1 128 0 64 64 0 1 1 -128 0z" />
+          </svg>
         </button>
       </div>
     </section>
 
-    <!-- Dialog: qué capturar -->
-    <div class="overlay" id="dialog-capture-choice">
-      <div class="dialog-card">
-        <div class="d-flex justify-content-between align-items-start mb-2">
-          <div>
-            <p class="dialog-title mb-0">¿Qué quiere capturar?</p>
+    <!-- Modal: qué capturar -->
+    <div class="modal fade" id="captureChoiceModal" tabindex="-1" aria-labelledby="captureChoiceModalLabel"
+      aria-hidden="true">
+      <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="captureChoiceModalLabel">¿Qué quiere capturar?</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Cerrar"></button>
           </div>
-          <button class="icon-btn" data-close-overlay aria-label="Cerrar">×</button>
-        </div>
-        <div class="row g-2">
-          <div class="col-6">
-            <button class="secondary-btn w-100" data-target="view-camera" data-camera-type="animal" data-close-overlay>Animales</button>
-          </div>
-          <div class="col-6">
-            <button class="secondary-btn w-100" data-target="view-camera" data-camera-type="plant" data-close-overlay>Plantas</button>
-          </div>
-        </div>
-      </div>
-    </div>
-
-    <!-- Dialog: reconocimiento -->
-    <div class="overlay" id="dialog-recognition">
-      <div class="dialog-card small">
-        <div class="d-flex justify-content-between align-items-start mb-2">
-          <p class="dialog-title mb-0">¡Reconocido!</p>
-          <button class="icon-btn" data-close-overlay aria-label="Cerrar">×</button>
-        </div>
-        <p class="dialog-subtitle">¿Qué desea hacer con su captura?</p>
-        <div class="row g-2">
-          <div class="col-6">
-            <button class="secondary-btn w-100" id="btn-save-from-rec">Guardar</button>
-          </div>
-          <div class="col-6">
-            <button class="primary-btn w-100" id="btn-capture-again">Capturar otra</button>
+          <div class="modal-body">
+            <div class="row g-2">
+              <div class="col-6">
+                <button class="secondary-btn w-100" data-target="view-camera" data-camera-type="animal"
+                  data-bs-dismiss="modal">Animales</button>
+              </div>
+              <div class="col-6">
+                <button class="secondary-btn w-100" data-target="view-camera" data-camera-type="plant"
+                  data-bs-dismiss="modal">Plantas</button>
+              </div>
+            </div>
           </div>
         </div>
       </div>
     </div>
 
-    <!-- Dialog: guardar en mapa -->
-    <div class="overlay" id="dialog-save">
-      <div class="dialog-card small">
-        <div class="d-flex justify-content-between align-items-start mb-2">
-          <p class="dialog-title mb-0">¿Guardar aquí?</p>
-          <button class="icon-btn" data-close-overlay aria-label="Cerrar">×</button>
-        </div>
-        <p class="dialog-subtitle">Guarde su captura en su ubicación actual o elija un lugar en el mapa.</p>
-        <div class="row g-2">
-          <div class="col-6">
-            <button class="secondary-btn w-100" id="btn-save-confirm">Guardar</button>
+    <!-- Modal: reconocimiento -->
+    <div class="modal fade" id="recognitionModal" tabindex="-1" aria-labelledby="recognitionModalLabel"
+      aria-hidden="true">
+      <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="recognitionModalLabel">¡Reconocido!</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Cerrar"></button>
           </div>
-          <div class="col-6">
-            <button class="primary-btn w-100" data-close-overlay>Cancelar</button>
+          <div class="modal-body">
+            <p class="dialog-subtitle mb-3">¿Qué desea hacer con su captura?</p>
+            <div class="row g-2">
+              <div class="col-6">
+                <button class="secondary-btn w-100" id="btn-save-from-rec" data-bs-dismiss="modal">Guardar</button>
+              </div>
+              <div class="col-6">
+                <button class="primary-btn w-100" id="btn-capture-again" data-bs-dismiss="modal">Capturar otra</button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Modal: guardar en mapa -->
+    <div class="modal fade" id="saveModal" tabindex="-1" aria-labelledby="saveModalLabel" aria-hidden="true">
+      <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="saveModalLabel">¿Guardar aquí?</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Cerrar"></button>
+          </div>
+          <div class="modal-body">
+            <p class="dialog-subtitle mb-3">Guarde su captura en su ubicación actual o elija un lugar en el mapa.</p>
+            <div class="row g-2">
+              <div class="col-6">
+                <button class="secondary-btn w-100" id="btn-save-confirm" data-bs-dismiss="modal">Guardar</button>
+              </div>
+              <div class="col-6">
+                <button class="primary-btn w-100" data-bs-dismiss="modal">Cancelar</button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Modal: validando datos -->
+    <div class="modal fade" id="validatingModal" tabindex="-1" aria-labelledby="validatingModalLabel" aria-hidden="true"
+      data-bs-backdrop="static" data-bs-keyboard="false">
+      <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content">
+          <div class="modal-body text-center py-4">
+            <h5 class="modal-title mb-3" id="validatingModalLabel">Validando datos...</h5>
+            <div class="spinner-grow text-secondary" role="status">
+              <span class="visually-hidden">Cargando...</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Modal: registrando cuenta -->
+    <div class="modal fade" id="registeringModal" tabindex="-1" aria-labelledby="registeringModalLabel"
+      aria-hidden="true" data-bs-backdrop="static" data-bs-keyboard="false">
+      <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content">
+          <div class="modal-body text-center py-4">
+            <h5 class="modal-title mb-3" id="registeringModalLabel">Un momento, por favor...</h5>
+            <div class="spinner-grow text-secondary" role="status">
+              <span class="visually-hidden">Cargando...</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Toast: guardar en mapa -->
+    <div class="toast-container position-fixed top-50 start-50 translate-middle p-3" style="z-index: 11;">
+      <div id="saveMapToast" class="toast" role="alert" aria-live="assertive" aria-atomic="true"
+        data-bs-autohide="false">
+        <div class="toast-header">
+          <button type="button" class="btn-close ms-auto" data-bs-dismiss="toast" aria-label="Cerrar"></button>
+        </div>
+        <div class="toast-body save-map-toast-body position-relative">
+          <img src="https://img.icons8.com/?size=100&id=7891&format=png&color=000000" alt="Puntero"
+            class="map-pointer-icon">
+          <h6 class="mb-3 text-center">¿Guardar aquí?</h6>
+          <p class="mb-3 text-center small">Guarde su captura en su ubicación actual o elija un lugar en el mapa.</p>
+          <div class="row g-2">
+            <div class="col-6">
+              <button class="secondary-btn w-100" id="btn-save-confirm-toast">Guardar</button>
+            </div>
+            <div class="col-6">
+              <button class="primary-btn w-100" data-bs-dismiss="toast">Cancelar</button>
+            </div>
           </div>
         </div>
       </div>
@@ -265,7 +371,10 @@
   </div>
 
   <!-- Bootstrap JS (opcional si se necesitan componentes) -->
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js" integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI"
+    crossorigin="anonymous"></script>
   <script src="./assets/js/app.js"></script>
 </body>
+
 </html>

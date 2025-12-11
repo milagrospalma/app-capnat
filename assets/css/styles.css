@@ -24,11 +24,36 @@ body {
   height: 100dvh;
 }
 
+section {
+  background-color: #fff;
+}
+
 .screen {
   width: 100%;
   max-width: 480px;
   padding: 24px;
   height: 100%;
+}
+
+.screen-no-padding {
+  padding: 0 !important;
+}
+
+.login-header {
+  padding: 1rem;
+}
+
+.header-shadow {
+  border-bottom: 1px solid var(--gray-300);
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.login-content-padding {
+  padding: 0 1rem;
+}
+
+.historial-content-padding {
+  padding: 0 1rem;
 }
 
 .screen-full {
@@ -39,7 +64,6 @@ body {
 .view {
   display: none;
   width: 100%;
-  /*min-height: 100vh;*/
 }
 
 .view.active {
@@ -50,27 +74,6 @@ body {
 .mobile-frame {
   width: 100%;
   height: 100vh;
-}
-
-@media (min-width: 768px) {
-  .mobile-frame {
-    width: 375px;
-    height: 100vh;
-    max-height: 812px;
-    margin: 0 auto;
-    box-shadow: 0 0 40px rgba(0, 0, 0, 0.2);
-    border-radius: 0;
-    overflow: hidden;
-    position: relative;
-  }
-  
-  body {
-    background: var(--gray-100);
-  }
-  
-  .app-shell {
-    padding: 20px;
-  }
 }
 
 .card-base {
@@ -86,11 +89,11 @@ body {
 .splash-card {
   width: 100%;
   height: 100%;
-display: flex;
-flex-direction: column;
-justify-content: center;
-gap: 1rem;
-padding: 2rem 5rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 1rem;
+  padding: 2rem 5rem;
 }
 
 .fade-delayed {
@@ -253,9 +256,9 @@ padding: 2rem 5rem;
 }
 
 .badge.toggle .home-category-title {
-    font-size: 17px;
-    margin: 0;
-    padding: 0;
+  font-size: 17px;
+  margin: 0;
+  padding: 0;
 }
 
 .pin {
@@ -435,6 +438,93 @@ padding: 2rem 5rem;
   top: 18px;
   left: 18px;
   z-index: 10;
+}
+
+/* Modal styles */
+#captureChoiceModal .modal-content,
+#recognitionModal .modal-content,
+#saveModal .modal-content,
+#validatingModal .modal-content {
+  border-radius: 12px;
+  border: 1px solid var(--gray-300);
+}
+
+#captureChoiceModal .modal-header,
+#recognitionModal .modal-header,
+#saveModal .modal-header {
+  border-bottom: 1px solid var(--gray-300);
+  padding: 16px;
+}
+
+#captureChoiceModal .modal-title,
+#recognitionModal .modal-title,
+#saveModal .modal-title,
+#validatingModal .modal-title {
+  font-weight: 800;
+  color: var(--text-main);
+}
+
+#captureChoiceModal .modal-body,
+#recognitionModal .modal-body,
+#saveModal .modal-body {
+  padding: 16px;
+}
+
+#validatingModal .modal-body,
+#registeringModal .modal-body {
+  padding: 32px 24px;
+}
+
+#validatingModal .spinner-grow,
+#registeringModal .spinner-grow {
+  width: 3rem;
+  height: 3rem;
+}
+
+/* Toast: guardar en mapa */
+#saveMapToast .toast-header {
+  border-bottom: 1px solid var(--gray-300);
+  padding: 8px 12px;
+  background: transparent;
+}
+
+#saveMapToast .toast-header .btn-close {
+  margin-left: auto;
+  margin-right: 0;
+}
+
+.save-map-toast-body {
+  padding: 16px;
+  padding-top: 32px;
+  min-width: 300px;
+  position: relative;
+}
+
+.map-pointer-icon {
+  width: 60px;
+  height: 60px;
+  position: absolute;
+  top: -30px;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 1;
+}
+
+/* Centrar el Toast en el medio de la pantalla */
+.toast-container.position-fixed.top-50.start-50.translate-middle {
+  transform: translate(-50%, -50%);
+}
+
+#saveMapToast .toast-body h6 {
+  font-weight: 800;
+  color: var(--text-main);
+  margin-bottom: 8px;
+}
+
+#saveMapToast .toast-body p {
+  font-size: 13px;
+  color: var(--text-muted);
+  margin-bottom: 12px;
 }
 
 /* Overlays & dialogs */
@@ -912,9 +1002,41 @@ padding: 2rem 5rem;
   .card-base {
     padding: 24px;
   }
+
   .map-box {
-    /*min-height: 420px;*/
     height: 92dvh;
   }
 }
 
+@media (min-width: 768px) {
+  .mobile-frame {
+    width: 375px;
+    height: auto;
+    margin: 0 auto;
+    box-shadow: 0 0 40px rgba(0, 0, 0, 0.2);
+    border-radius: 0;
+    overflow: hidden;
+    position: relative;
+  }
+
+  body {
+    background: var(--gray-100);
+  }
+
+  .app-shell {
+    padding: 20px;
+  }
+
+  .splash-card {
+    height: 95dvh;
+  }
+
+  .screen,
+  .screen-full {
+    height: 95dvh;
+  }
+
+  .map-box {
+    height: 87dvh;
+  }
+}

@@ -70,9 +70,29 @@ if (loginForm) {
       alert("Completa ambos campos para continuar.");
       return;
     }
-    alert(`Bienvenido, ${email}!`);
-    loginForm.reset();
-    showView("view-home");
+    
+    // Mostrar modal de validación
+    const validatingModalElement = document.getElementById("validatingModal");
+    const validatingModal = new bootstrap.Modal(validatingModalElement);
+    const validatingLabel = document.getElementById("validatingModalLabel");
+    const validatingSpinner = validatingModalElement.querySelector(".spinner-grow");
+    
+    validatingModal.show();
+    
+    // Después de 2 segundos, cambiar a mensaje de éxito
+    setTimeout(() => {
+      validatingLabel.textContent = `¡Bienvenido!`;
+      if (validatingSpinner) {
+        validatingSpinner.style.display = "none";
+      }
+      
+      // Después de otros 2 segundos, cerrar modal y cambiar a Home
+      setTimeout(() => {
+        validatingModal.hide();
+        loginForm.reset();
+        showView("view-home");
+      }, 2000);
+    }, 3000);
   });
 }
 
@@ -88,9 +108,29 @@ if (signupForm) {
       alert("Completa los campos obligatorios.");
       return;
     }
-    alert(`Cuenta creada para ${name}.`);
-    signupForm.reset();
-    showView("view-login");
+    
+    // Mostrar modal de registro
+    const registeringModalElement = document.getElementById("registeringModal");
+    const registeringModal = new bootstrap.Modal(registeringModalElement);
+    const registeringLabel = document.getElementById("registeringModalLabel");
+    const registeringSpinner = registeringModalElement.querySelector(".spinner-grow");
+    
+    registeringModal.show();
+    
+    // Después de 3 segundos, cambiar a mensaje de éxito
+    setTimeout(() => {
+      registeringLabel.textContent = "Registro exitoso";
+      if (registeringSpinner) {
+        registeringSpinner.style.display = "none";
+      }
+      
+      // Después de otros 2 segundos, cerrar modal y cambiar a Login
+      setTimeout(() => {
+        registeringModal.hide();
+        signupForm.reset();
+        showView("view-login");
+      }, 2000);
+    }, 3000);
   });
 }
 
@@ -108,20 +148,13 @@ if (splashActions) {
   setTimeout(() => splashActions.classList.add("visible"), 2000);
 }
 
-// Camera flow
-const cameraShot = document.getElementById("camera-shot");
-if (cameraShot) {
-  cameraShot.addEventListener("click", (e) => {
-    e.preventDefault();
-    showOverlay("dialog-recognition");
-  });
-}
+// Camera flow - El botón ahora usa Bootstrap modal directamente, no necesita event listener
 
 const btnCaptureAgain = document.getElementById("btn-capture-again");
 if (btnCaptureAgain) {
   btnCaptureAgain.addEventListener("click", (e) => {
     e.preventDefault();
-    closeOverlays();
+    // El modal se cierra automáticamente con data-bs-dismiss
     showView("view-camera");
   });
 }
@@ -130,8 +163,16 @@ const btnSaveFromRec = document.getElementById("btn-save-from-rec");
 if (btnSaveFromRec) {
   btnSaveFromRec.addEventListener("click", (e) => {
     e.preventDefault();
-    closeOverlays();
-    showOverlay("dialog-save");
+    // El modal de reconocimiento se cierra automáticamente con data-bs-dismiss
+    // Ir a Home screen
+    showView("view-home");
+    
+    // Mostrar el Toast después de un pequeño delay para que la vista cambie primero
+    setTimeout(() => {
+      const saveMapToastElement = document.getElementById("saveMapToast");
+      const saveMapToast = new bootstrap.Toast(saveMapToastElement);
+      saveMapToast.show();
+    }, 100);
   });
 }
 
@@ -139,10 +180,48 @@ const btnSaveConfirm = document.getElementById("btn-save-confirm");
 if (btnSaveConfirm) {
   btnSaveConfirm.addEventListener("click", (e) => {
     e.preventDefault();
-    closeOverlays();
+    // El modal se cierra automáticamente con data-bs-dismiss
     const newPin = document.getElementById("pin-new");
     if (newPin) newPin.classList.remove("hidden");
     showView("view-home");
+  });
+}
+
+// Botón Guardar del Toast
+const btnSaveConfirmToast = document.getElementById("btn-save-confirm-toast");
+if (btnSaveConfirmToast) {
+  btnSaveConfirmToast.addEventListener("click", (e) => {
+    e.preventDefault();
+    // Cerrar el Toast
+    const saveMapToastElement = document.getElementById("saveMapToast");
+    const saveMapToast = bootstrap.Toast.getInstance(saveMapToastElement);
+    if (saveMapToast) {
+      saveMapToast.hide();
+    }
+    
+    // Calcular la posición del puntero relativa al mapa
+    const mapPointer = document.querySelector(".map-pointer-icon");
+    const mapBox = document.querySelector(".map-box");
+    const newPin = document.getElementById("pin-new");
+    
+    if (mapPointer && mapBox && newPin) {
+      // Obtener la posición del puntero en la pantalla
+      const pointerRect = mapPointer.getBoundingClientRect();
+      const pointerCenterX = pointerRect.left + pointerRect.width / 2;
+      const pointerCenterY = pointerRect.top + pointerRect.height / 2;
+      
+      // Obtener la posición del mapa en la pantalla
+      const mapRect = mapBox.getBoundingClientRect();
+      
+      // Calcular la posición relativa en porcentajes
+      const relativeX = ((pointerCenterX - mapRect.left) / mapRect.width) * 100;
+      const relativeY = ((pointerCenterY - mapRect.top) / mapRect.height) * 100;
+      
+      // Aplicar la posición al pin
+      newPin.style.left = `${relativeX}%`;
+      newPin.style.top = `${relativeY}%`;
+      newPin.classList.remove("hidden");
+    }
   });
 }
 

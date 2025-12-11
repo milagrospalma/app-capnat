@@ -3,7 +3,7 @@ const especiesData = [
   {
     "id": 1,
     "categoria": "animal",
-    "imagen": "https://images.unsplash.com/photo-1456926631375-92c8ce872def?auto=format&fit=crop&w=800&q=80",
+    "imagen": "https://www.peru.travel/Contenido/Uploads/oso-andino-interior-1_637708492669784910.jpg",
     "nombre": "Oso de Anteojos",
     "nombreCientifico": "Tremarctos ornatus",
     "especie": "Mamífero",
@@ -14,7 +14,7 @@ const especiesData = [
   {
     "id": 2,
     "categoria": "animal",
-    "imagen": "https://images.unsplash.com/photo-1508672019048-805c876b67e2?auto=format&fit=crop&w=800&q=80",
+    "imagen": "https://perujungletrips.com/wp-content/uploads/2025/06/Gallito-de-las-rocas-Rupicola-peruvianus-Ave-Naciona-del-Peru-2.webp",
     "nombre": "Gallito de las Rocas",
     "nombreCientifico": "Rupicola peruviana",
     "especie": "Ave",
@@ -25,7 +25,7 @@ const especiesData = [
   {
     "id": 3,
     "categoria": "animal",
-    "imagen": "https://images.unsplash.com/photo-1546182990-dffeafbe841d?auto=format&fit=crop&w=800&q=80",
+    "imagen": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQle6ez7ayeXuldiVhltWAIYH3Zz39jpEC4XA&s",
     "nombre": "Jaguar",
     "nombreCientifico": "Panthera onca",
     "especie": "Mamífero",
@@ -36,7 +36,7 @@ const especiesData = [
   {
     "id": 4,
     "categoria": "animal",
-    "imagen": "https://images.unsplash.com/photo-1501706362039-c6e80948e93c?auto=format&fit=crop&w=800&q=80",
+    "imagen": "https://yunkawasiperu.org/wp-content/uploads/2023/04/1.-Mono-choro-de-cola-amarilla-Wilhelm-1-scaled.jpg",
     "nombre": "Mono Choro",
     "nombreCientifico": "Lagothrix lagotricha",
     "especie": "Mamífero",
@@ -47,7 +47,7 @@ const especiesData = [
   {
     "id": 5,
     "categoria": "animal",
-    "imagen": "https://images.unsplash.com/photo-1516617442634-75371039cb3b?auto=format&fit=crop&w=800&q=80",
+    "imagen": "https://www.actualidadambiental.pe/wp-content/uploads/2024/05/pudu_yunga_andina.jpeg",
     "nombre": "Venado Enano",
     "nombreCientifico": "Pudu mephistophiles",
     "especie": "Mamífero",
@@ -58,7 +58,7 @@ const especiesData = [
   {
     "id": 6,
     "categoria": "planta",
-    "imagen": "https://images.unsplash.com/photo-1501004318641-b39e6451bec6?auto=format&fit=crop&w=800&q=80",
+    "imagen": "https://elcomercio.pe/resizer/gWbMbKNFogEVtEekort--dlmieY=/1200x900/smart/filters:format(jpeg):quality(75)/arc-anglerfish-arc2-prod-elcomercio.s3.amazonaws.com/public/L5VJFAGZOZFVXJGR3DQG2E2JSY.jpg",
     "nombre": "Orquídea",
     "nombreCientifico": "Epidendrum secundum",
     "especie": "Orquidácea",
@@ -69,7 +69,7 @@ const especiesData = [
   {
     "id": 7,
     "categoria": "planta",
-    "imagen": "https://images.unsplash.com/photo-1516253593875-bd7ba052fbc5?auto=format&fit=crop&w=800&q=80",
+    "imagen": "https://vendeplantas.tiendada.com/api/scrooge/file/FL-48E83957?v=-1",
     "nombre": "Ulcumano",
     "nombreCientifico": "Retrophyllum rospigliosii",
     "especie": "Conífera",
@@ -80,7 +80,7 @@ const especiesData = [
   {
     "id": 8,
     "categoria": "planta",
-    "imagen": "https://images.unsplash.com/photo-1516387938699-a93567ec168e?auto=format&fit=crop&w=800&q=80",
+    "imagen": "https://static.inaturalist.org/photos/165471853/large.jpeg",
     "nombre": "Cedro",
     "nombreCientifico": "Cedrela odorata",
     "especie": "Árbol",
@@ -91,7 +91,7 @@ const especiesData = [
   {
     "id": 9,
     "categoria": "planta",
-    "imagen": "https://images.unsplash.com/photo-1516253593875-bd7ba052fbc5?auto=format&fit=crop&w=800&q=80",
+    "imagen": "https://campograndeperu.com/wp-content/uploads/2024/02/nogal-1.jpg",
     "nombre": "Nogal",
     "nombreCientifico": "Juglans neotropica",
     "especie": "Árbol",
@@ -102,7 +102,7 @@ const especiesData = [
   {
     "id": 10,
     "categoria": "planta",
-    "imagen": "https://images.unsplash.com/photo-1516253593875-bd7ba052fbc5?auto=format&fit=crop&w=800&q=80",
+    "imagen": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR2hd0eyDyMH4b-X3pxr7AedxA2JyjdbOV3dg&s",
     "nombre": "Roble",
     "nombreCientifico": "Quercus humboldtii",
     "especie": "Árbol",
